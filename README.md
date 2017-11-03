@@ -1,1 +1,1 @@
-# CyNeuroCloud
+CyNeuroCloud project
