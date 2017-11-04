@@ -21,12 +21,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-             <a class="navbar-brand js-scroll-trigger" href="">CyNeuro<a>
+             <a class="navbar-brand js-scroll-trigger" href="">CyNeuro</a>
         </div>
-        <div class="col-md-6">
-        </div>         
-        <div class="col-md-2">
-            <img class="pull-right" src="../cyNeuroCloud/images/viman-lab.png" alt="Viman lab" width="100" height="50">
+        <div class="col-md-2 pull-right">
+            <img class="pull-right" src="images/viman-lab.png" alt="Viman lab" width="100" height="50">
         </div>
         
     </div>

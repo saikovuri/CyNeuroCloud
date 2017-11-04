@@ -27,7 +27,7 @@ header.masthead {
   height:200px;
   text-align: center;
   color: white;
-  background-image: url(../cyNeuroCloud/images/Neuron.jpg);
+  background-image: url(images/Neuron.jpg);
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -35,3 +35,9 @@ header.masthead {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; }
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
