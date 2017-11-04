@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
- <meta charset="utf-8">
- <title>Cyneuro Project</title>
- <meta name="description" content="">
- <meta name="author" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="stylesheet" type="text/css" href="style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
-</head>
-<body>
-<header class="masthead">
-        <div class="container">
+   <head>
+      <meta charset="utf-8">
+      <title>Cyneuro Project</title>
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <script type="text/javascript" src="script.js" ></script>
+   </head>
+   <body>
+      <header class="masthead">
+         <div class="container">
             <div class="intro-text">
             </div>
-        </div>
-</header>	
-<nav class="navbar navbar-expand-lg navbar-dark navbar-shrink " id="mainNav">
-<div class="container">
-    <div class="row">
-        <div class="col-md-4">
-             <a class="navbar-brand js-scroll-trigger" href="">CyNeuro</a>
-        </div>
-        <div class="col-md-2 pull-right">
-            <img class="pull-right" src="images/viman-lab.png" alt="Viman lab" width="100" height="50">
-        </div>
-        
-    </div>
-</div>
-</nav>
+         </div>
+      </header>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-shrink " id="mainNav">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <a class="navbar-brand js-scroll-trigger" href="">CyNeuro</a>
+               </div>
+               <div class="col-md-2 pull-right">
+                  <img class="pull-right" src="images/viman-lab.png" alt="Viman lab" width="100" height="50">
+               </div>
+            </div>
+         </div>
+      </nav>
