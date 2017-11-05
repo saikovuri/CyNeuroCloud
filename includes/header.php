@@ -24,7 +24,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-4">
-                  <a class="navbar-brand js-scroll-trigger" href="">CyNeuro</a>
+                  <a class="navbar-brand js-scroll-trigger" href="./index.php">CyNeuro</a>
                </div>
                <div class="col-md-2 pull-right">
                   <img class="pull-right" src="images/viman-lab.png" alt="Viman lab" width="100" height="50">

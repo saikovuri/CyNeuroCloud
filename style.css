@@ -83,3 +83,8 @@ header.masthead {
 .padding-bottom-5{
   padding-bottom: 5px !important;
 }
+
+#arrow {
+    -webkit-appearance:none;
+    outline: none;
+}

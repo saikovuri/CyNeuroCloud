@@ -42,9 +42,9 @@
             <input  type="text" class="form-control" id="inputname" >
          </div>
          <div class="tooltip col-sm-2" style="color: black; margin-top: 8px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span style="height: 40px" class="tooltiptext">Percentage of connections from Neuron Type A to Type B</span>
-      </div>
+            <span class="glyphicon glyphicon-question-sign"></span>
+            <span style="height: 40px" class="tooltiptext">Percentage of connections from Neuron Type A to Type B</span>
+         </div>
          <div class="col-sm-2">
          </div>
       </div>
@@ -98,10 +98,9 @@
             <input  type="text" class="form-control" id="inputname" >
          </div>
          <div class="tooltip col-sm-2" style="color: black; margin-top: 8px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span style="height: 40px" class="tooltiptext">Random weights</span>
-      </div>
-     
+            <span class="glyphicon glyphicon-question-sign"></span>
+            <span style="height: 40px" class="tooltiptext">Random weights</span>
+         </div>
          <div class="col-sm-2">
          </div>
       </div>
@@ -110,12 +109,11 @@
       <div class="col-sm-6">
          <label><input value='4' type="radio" name="optradio">   Upload csv file</label>
       </div>
-
       <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Tooltip text</span>
       </div>
-       <div class="col-sm-12" style="display: none" id="selection4">
+      <div class="col-sm-12" style="display: none" id="selection4">
          <div class="col-sm-4">
          </div>
          <div class="col-sm-4">
@@ -134,6 +132,7 @@
          <span class="tooltiptext">Tooltip text</span>
       </div>
    </div>
+   </br>
    <div class="form-actions" style="margin-left:50px ">
       <a class="btn btn-primary" href="neuronDetails.php">Back</a>
       &nbsp&nbsp&nbsp&nbsp&nbsp
