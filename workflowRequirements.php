@@ -53,10 +53,10 @@
       <div class="col-sm-6">
          <label><input value='2' type="radio" name="optradio">   Upload csv file</label>
       </div>
-      <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
+    <!--   <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Tooltip text</span>
-      </div>
+      </div> -->
       <div class="col-sm-12" style="display: none" id="selection2">
          <div class="col-sm-4">
          </div>
@@ -71,10 +71,10 @@
       <div class="col-sm-6">
          <label><input  type="radio" name="optradio" >   I am not sure</label>
       </div>
-      <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
+     <!--  <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Tooltip text</span>
-      </div>
+      </div> -->
    </div>
    <div class="form-group row">
       <div class="col-sm-2">
@@ -109,10 +109,10 @@
       <div class="col-sm-6">
          <label><input value='4' type="radio" name="optradio">   Upload csv file</label>
       </div>
-      <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
+      <!-- <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Tooltip text</span>
-      </div>
+      </div> -->
       <div class="col-sm-12" style="display: none" id="selection4">
          <div class="col-sm-4">
          </div>
@@ -127,10 +127,10 @@
       <div class="col-sm-6">
          <label><input type="radio" name="optradio" >   I am not sure</label>
       </div>
-      <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
+      <!-- <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Tooltip text</span>
-      </div>
+      </div> -->
    </div>
    </br>
    <div class="form-actions" style="margin-left:50px ">
