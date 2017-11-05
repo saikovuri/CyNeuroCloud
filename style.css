@@ -64,8 +64,8 @@ header.masthead {
     visibility: hidden;
     width: 200px;
     height: 30px;
-    background-color: black;
-    color: #fff;
+    background-color: #e6e6e6;
+    color: black;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -87,4 +87,8 @@ header.masthead {
 #arrow {
     -webkit-appearance:none;
     outline: none;
+}
+
+.alert {
+   width:50%;    
 }

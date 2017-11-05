@@ -16,7 +16,7 @@
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
+         <span class="tooltiptext">Number of Neurons</span>
       </div>
    </div>
    <div class="form-group row">
@@ -25,7 +25,7 @@
       <label for="description" class="col-sm-2 col-form-label">Connectivity Matrix:</label>
       <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
+         <span class="tooltiptext">Connectivity Matrix</span>
       </div>
    </div>
    <div class="form-group row">
@@ -53,11 +53,7 @@
       <div class="col-sm-6">
          <label><input value='2' type="radio" name="optradio">   Upload csv file</label>
       </div>
-    <!--   <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
-      </div> -->
-      <div class="col-sm-12" style="display: none" id="selection2">
+    <div class="col-sm-12" style="display: none" id="selection2">
          <div class="col-sm-4">
          </div>
          <div class="col-sm-4">
@@ -71,10 +67,6 @@
       <div class="col-sm-6">
          <label><input  type="radio" name="optradio" >   I am not sure</label>
       </div>
-     <!--  <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
-      </div> -->
    </div>
    <div class="form-group row">
       <div class="col-sm-2">
@@ -82,7 +74,7 @@
       <label for="description" class="col-sm-2 col-form-label">Weight Matrix:</label>
       <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
          <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
+         <span class="tooltiptext">Weight Matrix</span>
       </div>
    </div>
    <div class="form-group row">
@@ -109,10 +101,6 @@
       <div class="col-sm-6">
          <label><input value='4' type="radio" name="optradio">   Upload csv file</label>
       </div>
-      <!-- <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
-      </div> -->
       <div class="col-sm-12" style="display: none" id="selection4">
          <div class="col-sm-4">
          </div>
@@ -127,10 +115,6 @@
       <div class="col-sm-6">
          <label><input type="radio" name="optradio" >   I am not sure</label>
       </div>
-      <!-- <div class="tooltip col-sm-2" style="color: black; margin-top: 1px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
-      </div> -->
    </div>
    </br>
    <div class="form-actions" style="margin-left:50px ">
@@ -138,6 +122,7 @@
       &nbsp&nbsp&nbsp&nbsp&nbsp
       <a class="btn btn-primary" href="workflowRequirements2.php">Next</a>
    </div>
+</br>
 </form>
 </body>
 </html>

@@ -16,7 +16,7 @@
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
+         <span class="tooltiptext">Task/Job Name</span>
       </div>
    </div>
    <div class="form-group row">
@@ -28,7 +28,7 @@
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Tooltip text</span>
+         <span class="tooltiptext">Description of the Task/Job</span>
       </div>
    </div>
    <div class="form-group row">
