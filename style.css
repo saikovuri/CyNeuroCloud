@@ -77,3 +77,9 @@ header.masthead {
     visibility: visible;
 }
 
+.padding-top-10{
+  padding-top: 15px !important;
+}
+.padding-bottom-5{
+  padding-bottom: 5px !important;
+}

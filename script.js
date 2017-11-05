@@ -27,3 +27,15 @@
 		});
 	});
 
+
+	$(function () {
+    $("#fmri").on("click", function () {
+        $("#main").load("fmri.php");
+    });
+    $("#neuron").on("click", function () {
+        $("#main").load("neuron.php");
+    });
+     $("#wgcna").on("click", function () {
+        $("#main").load("wgcna.php");
+    });
+});
