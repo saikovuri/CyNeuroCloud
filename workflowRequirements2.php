@@ -33,6 +33,8 @@
    <div class="col-md-1">
       <input type="image" id="arrow" name="arrowdown" src="images\arrowdown.jpg" alt="down" value = '1' width="35" height="35">
    </div>
+
+   <form method="post" action="workflowRequirements3.php" autocomplete="off">
    <div class="container jumbotron padding-top-10 padding-bottom-5" id="advanced" style="width: 75%; display: none;  " >
       </br>
       </br>
@@ -89,11 +91,22 @@
    </div>
 </div>
 </br>
+
 <div class="form-actions" style="margin-left:50px ">
-   <a class="btn btn-primary" href="workflowRequirements.php">Back</a>
-   &nbsp&nbsp&nbsp&nbsp&nbsp
-   <a class="btn btn-primary" href="workflowRequirements3.php">Next</a>
-</div>
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-1">
+         <a class="btn btn-primary" href="workflowRequirements.php">Back</a>
+      </div>
+      &nbsp&nbsp&nbsp&nbsp&nbsp
+      <div class="col-sm-1">
+         <button style="width: 60px" type="submit" class="btn btn-block btn-primary" name="btn-login">Next</button>
+      </div>
+      <div class="col-sm-5">
+      </div>
+   </div>
 </br>
+
+</form>
 </body>
 </html>

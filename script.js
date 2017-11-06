@@ -13,7 +13,16 @@
 	            document.getElementById("selection2").style.display = "none";
 	        }
 
-	        if ($(this).val() == 3) {
+	    });
+	});
+
+
+
+	$(document).ready(function() {
+
+	    $('input:radio[name=optradio1]').click(function() {
+	       
+		    if ($(this).val() == 3) {
 	            document.getElementById("selection3").style.display = "block";
 	        } else {
 	            document.getElementById("selection3").style.display = "none";
