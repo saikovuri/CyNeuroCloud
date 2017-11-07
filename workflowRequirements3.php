@@ -16,10 +16,19 @@
    </div>
 </div>
 </br></br></br></br>
+
 <div class="form-actions" style="margin-left:50px ">
-   <a class="btn btn-primary" href="workflowRequirements2.php">Back</a>
-   &nbsp&nbsp&nbsp&nbsp&nbsp
-   <a class="btn btn-primary" href="workflowRequirements4.php">Next</a>
-</div>
+      <div class="col-sm-5">
+      </div>
+      <div class="col-sm-1">
+         <a class="btn btn-primary" href="workflowRequirements2.php">Back</a>
+      </div>
+      
+      <div class="col-sm-1">
+         <button style="width: 60px" type="submit" class="btn btn-block btn-primary" name="btn-login">Next</button>
+      </div>
+      <div class="col-sm-5">
+      </div>
+   </div>
 </body>
 </html>

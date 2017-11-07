@@ -78,3 +78,37 @@
 	    });
 
 	});
+
+
+	
+$(document).ready(function() {
+  $("select").change(function() {
+    var option = $(this).val();
+    if (option == "1") {
+    document.getElementById("one").style.display = "block";
+    document.getElementById("two").style.display = "block";
+    } else 
+    {
+    document.getElementById("one").style.display = "none";
+    document.getElementById("two").style.display = "none";
+    } 
+
+     if (option == "2") {
+    document.getElementById("three").style.display = "block";
+      
+    } else 
+    {
+    document.getElementById("three").style.display = "none";
+    } 
+
+     if (option == "3") {
+    document.getElementById("five").style.display = "block";
+      
+    } else 
+    {
+    document.getElementById("five").style.display = "none";
+    } 
+  });
+
+
+});

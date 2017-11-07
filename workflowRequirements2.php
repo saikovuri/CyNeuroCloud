@@ -98,7 +98,7 @@
       <div class="col-sm-1">
          <a class="btn btn-primary" href="workflowRequirements.php">Back</a>
       </div>
-      &nbsp&nbsp&nbsp&nbsp&nbsp
+      
       <div class="col-sm-1">
          <button style="width: 60px" type="submit" class="btn btn-block btn-primary" name="btn-login">Next</button>
       </div>
