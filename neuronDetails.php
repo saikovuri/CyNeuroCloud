@@ -1,21 +1,27 @@
 <?php
    include("includes/header.php");
-   if(isset($_POST['jobname']))
-      {echo htmlentities($_POST['jobname']);}
+   session_start();
+
+  if(!empty($_POST)){
+   $_SESSION['jobname'] = $_POST['jobname'];
+   $_SESSION['jobdescription'] = $_POST['jobdescription'];
+   header("Location:workflowRequirements.php");
+    }
+  
    ?>
 <div class="container">
    <h2 class="heading"> Neuron Job Details</h2>
 </div>
 </br>
 </br>
-<form method="POST" action="workflowRequirements.php" autocomplete="off">
+<form method='POST' action='' autocomplete="off">
    <div class="form-group row">
       <div class="col-sm-2">
       </div>
       <label for="jobname" class="col-sm-2 col-form-label">Task/Job Name:</label>
       <div class="col-sm-5">
    
-      <input type="text" id="inputname" class="form-control" name="jobname" value="<?php if(isset($_POST['jobname'])){echo htmlentities($_POST['jobname']);} ?>" />
+      <input type="text" id="jobname" class="form-control" name="jobname" value="<?php echo $_SESSION['jobname'];?>"/>
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
@@ -29,25 +35,14 @@
       </div>
       <label for="description" class="col-sm-2 col-form-label">Description of the Task/Job:</label>
       <div class="col-sm-5">
-         <input class="form-control" id="jobdescription">
+         <input type="text" id="descr" name="jobdescription" class="form-control" id="jobdescription" value="<?php echo $_SESSION['jobdescription'];?>"/>
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Description of the Task/Job</span>
       </div>
    </div>
-  <!--  <div class="form-group row">
-      <div class="col-sm-2">
-      </div>
-      <label for="description" class="col-sm-2 col-form-label">Select data file to upload</label>
-      <div class="col-sm-3">
-         <input required type="file" name="fileToUpload" id="fileToUpload">
-      </div>
-      <div class="tooltip col-sm-2" style="color: black; margin-top: 5px">
-         <span class="glyphicon glyphicon-question-sign"></span>
-         <span class="tooltiptext">Select data file to upload</span>
-      </div>
-   </div> -->
+  
    </br>
    <div class="form-actions" style="margin-left:50px ">
       <div class="col-sm-5">

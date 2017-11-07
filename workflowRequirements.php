@@ -1,5 +1,6 @@
 <?php
    include("includes/header.php");
+   session_start();
    ?>
 <div class="container">
    <h2 class="heading"> Neuron Workflow Requirements</h2>
@@ -19,7 +20,6 @@
          <span class="tooltiptext">Number of Neurons</span>
       </div>
    </div>
-
    <div class="form-group row">
       <div class="col-sm-2">
       </div>
@@ -27,21 +27,20 @@
       <div class="col-sm-5">
          <div>
             <select class="form-control">
-                <option>Choose number of Types of Neurons</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+               <option>Choose number of types of Neurons</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
             </select>
-        </div>
+         </div>
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Number of types of Neurons</span>
       </div>
    </div>
-
- <div class="form-group row"  id="one" style="display: none">
-   </br>
+   <div class="form-group row"  id="one" style="display: none">
+      </br>
       <div class="col-sm-2">
       </div>
       <label for="jobname" class="col-sm-2 col-form-label">Number of A Neurons:</label>
@@ -49,12 +48,10 @@
          <input type="text" class="form-control" id="inputname" >
       </div>
       <div class="col-sm-5" >
-       
       </div>
    </div>
-
    <div class="form-group row"  id="two" style="display: none">
-   </br>
+      </br>
       <div class="col-sm-2">
       </div>
       <label for="jobname" class="col-sm-2 col-form-label">A - A:</label>
@@ -62,46 +59,77 @@
          <input type="text" class="form-control" id="inputname" >
       </div>
       <div class="col-sm-5" >
-       
       </div>
-   </br></br></br>
+      </br></br></br>
    </div>
-
    <div class="form-group row"  id="three" style="display: none">
       </br>
-       <div class="col-sm-2">
+      <div class="col-sm-2">
       </div>
       <label for="jobname" class="col-sm-1 col-form-label">A Neurons:</label>
       <div class="col-sm-1">
          <input type="text" class="form-control" id="inputname" >
       </div>
-       <div class="col-sm-1">
+      <div class="col-sm-1">
       </div>
       <label for="jobname" class="col-sm-1 col-form-label">B Neurons:</label>
       <div class="col-sm-1">
          <input type="text" class="form-control" id="inputname" >
       </div>
       <div class="col-sm-5" >
-       
       </div>
-   </br></br></br>
+      </br></br></br>
    </div>
-
+   <div class="form-group row"  id="four" style="display: none">
+      </br>
+      <div class="col-sm-2">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">A - A:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">A - B:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-5" >
+      </div>
+      </br></br></br>
+   </div>
    <div class="form-group row"  id="five" style="display: none">
       </br>
-       <div class="col-sm-2">
+      <div class="col-sm-2">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">B - A:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">B - B:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-5" >
+      </div>
+      </br></br></br>
+   </div>
+   <div class="form-group row"  id="six" style="display: none">
+      </br>
+      <div class="col-sm-2">
       </div>
       <label for="jobname" class="col-sm-1 col-form-label">A Neurons:</label>
       <div class="col-sm-1">
          <input type="text" class="form-control" id="inputname" >
       </div>
-       <div class="col-sm-1">
+      <div class="col-sm-1">
       </div>
       <label for="jobname" class="col-sm-1 col-form-label">B Neurons:</label>
       <div class="col-sm-1">
          <input type="text" class="form-control" id="inputname" >
       </div>
-
       <div class="col-sm-1">
       </div>
       <label for="jobname" class="col-sm-1 col-form-label">C Neurons:</label>
@@ -109,16 +137,81 @@
          <input type="text" class="form-control" id="inputname" >
       </div>
       <div class="col-sm-2" >
-       
       </div>
-   </br></br></br>
+      </br></br></br>
    </div>
-
-
-
-
-
-
+   <div class="form-group row"  id="seven" style="display: none">
+      </br>
+      <div class="col-sm-2">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">A - A:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">A - B:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">A - C:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-2" >
+      </div>
+      </br></br></br>
+   </div>
+   <div class="form-group row"  id="eight" style="display: none">
+      </br>
+      <div class="col-sm-2">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">B - A:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">B - B:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">B - C:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-2" >
+      </div>
+      </br></br></br>
+   </div>
+   <div class="form-group row"  id="nine" style="display: none">
+      </br>
+      <div class="col-sm-2">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">C - A:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">C - B:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-1">
+      </div>
+      <label for="jobname" class="col-sm-1 col-form-label">C - C:</label>
+      <div class="col-sm-1">
+         <input type="text" class="form-control" id="inputname" >
+      </div>
+      <div class="col-sm-2" >
+      </div>
+      </br></br></br>
+   </div>
    <div class="form-group row">
       <div class="col-sm-2">
       </div>
@@ -153,7 +246,7 @@
       <div class="col-sm-6">
          <label><input value='2' type="radio" name="optradio">   Upload csv file</label>
       </div>
-    <div class="col-sm-12" style="display: none" id="selection2">
+      <div class="col-sm-12" style="display: none" id="selection2">
          <div class="col-sm-4">
          </div>
          <div class="col-sm-4">
@@ -217,22 +310,19 @@
       </div>
    </div>
    </br>
-
-<div class="form-actions" style="margin-left:50px ">
+   <div class="form-actions" style="margin-left:50px ">
       <div class="col-sm-5">
       </div>
       <div class="col-sm-1">
          <a class="btn btn-primary" href="neuronDetails.php">Back</a>
       </div>
-      
       <div class="col-sm-1">
          <button style="width: 60px" type="submit" class="btn btn-block btn-primary" name="btn-login">Next</button>
       </div>
       <div class="col-sm-5">
       </div>
    </div>
-
-</br>
+   </br>
 </form>
 </body> 
 </html>

@@ -95,18 +95,30 @@ $(document).ready(function() {
 
      if (option == "2") {
     document.getElementById("three").style.display = "block";
+    document.getElementById("four").style.display = "block";
+    document.getElementById("five").style.display = "block";
+    
       
     } else 
     {
     document.getElementById("three").style.display = "none";
+    document.getElementById("four").style.display = "none";
+    document.getElementById("five").style.display = "none";
     } 
 
-     if (option == "3") {
-    document.getElementById("five").style.display = "block";
+    if (option == "3") {
+    document.getElementById("six").style.display = "block";
+    document.getElementById("seven").style.display = "block";
+    document.getElementById("eight").style.display = "block";
+    document.getElementById("nine").style.display = "block";
+    
       
     } else 
     {
-    document.getElementById("five").style.display = "none";
+     document.getElementById("six").style.display = "none";
+    document.getElementById("seven").style.display = "none";
+    document.getElementById("eight").style.display = "none";
+    document.getElementById("nine").style.display = "none";
     } 
   });
 
