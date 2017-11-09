@@ -109,9 +109,6 @@
       </div>
       <div class="col-sm-4">
       </div>
-      <div class="col-sm-6">
-         <label><input  type="radio" name="optradio" >   I am not sure</label>
-      </div>
    </div>
    </br>
    <div class="form-actions" style="margin-left:50px ">

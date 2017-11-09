@@ -43,7 +43,7 @@
    </div>
    <div class="container marketing">
       <div class="page-header" >
-         <h1 style="text-align:center;"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Choose existing applications</h1>
+         <h2 style="text-align:center;"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Choose the workflow steps you would like to execute </h2>
       </div>
       <div class="row" >
          <div class="col-md-12" >
@@ -76,7 +76,7 @@
       </div>
       <div class="row">
          <div class="page-header">
-            <h1 style="text-align:center;"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Design custom workflow </h1>
+            <h2 style="text-align:center;"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Design custom workflow </h2>
          </div>
          <div class="col-md-12">
             <div class="panel panel-primary" style="border-color: #404040">

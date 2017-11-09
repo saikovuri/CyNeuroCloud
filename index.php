@@ -1,14 +1,14 @@
 <?php
    include("includes/header.php");
    ?>
-<div class="container jumbotron padding-top-10 padding-bottom-5 ">
+<div style="background:transparent !important" class="container jumbotron padding-top-10 padding-bottom-5 ">
    <div class="col-md-4 active">
       <input type="image" name="image1" src="images\fmri.jpg" alt="FMRI" value = '1' width="300" height="200">
       <p class = "text-center"> FMRI </p>
    </div>
    <div class="col-md-4 active">
       <input type="image" name="image1" src="images\Neuron.jpg" alt="Neuron" value = '2' width="300" height="200">
-      <p class = "text-center"> Neuron </p>
+      <p class = "text-center"> NEURON </p>
    </div>
    <div class="col-md-4 active">
       <input type="image" name="image1" src="images\wgcna.jpg" alt="WGCNA" value = '3' width="300" height="200">
