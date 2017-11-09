@@ -13,6 +13,8 @@
             }
       }
 
+      
+
 
 	$(document).ready(function() {
 
@@ -102,13 +104,12 @@
 $(document).ready(function() {
 
 $("select").change(function() {
-// var e = document.getElementById("typesDropdown");
-// var limit = e.options[e.selectedIndex].text;
 $('input.single-checkbox').on('click', function(evt) {
 	var e = document.getElementById("typesDropdown");
 	var limit = e.options[e.selectedIndex].text;
    if($(this).siblings(':checked').length >= limit) {
-       this.checked = false;
+	// $('input:checkbox').removeAttr('checked');
+   	   this.checked = false;
    }
 
 	 

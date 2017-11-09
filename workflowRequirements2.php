@@ -48,14 +48,7 @@
                <input  type="text" class="form-control" id="inputname" >
             </div>
          </div>
-         <div class="form-group row" style="margin-top: -10px">
-            <div class="col-sm-8">
-               <p>Enter main input file name: </p>
-            </div>
-            <div class="col-sm-4">
-               <input  type="text" class="form-control" id="inputname" >
-            </div>
-         </div>
+         
          <div class="form-group row" style="margin-top: -10px">
             <div class="col-sm-8">
                <p>Enter name for compressed output file: </p>

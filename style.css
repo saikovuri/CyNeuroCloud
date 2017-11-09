@@ -16,10 +16,9 @@
     font-family: 'Kaushan Script', 'Helvetica Neue', Helvetica, Arial, cursive;
 }
   
-a {
-  color: #fed136; }
-  a.active, a:active, a:focus, a:hover {
-    color: #fec503; }
+.panel-primary > .panel-heading-custom {
+    background: #404040; color: #fff;
+}
 
 .check_box
 {
