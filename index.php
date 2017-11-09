@@ -16,23 +16,22 @@
    </div>
 </div>
 <div class = "container" style="display: block;" id="selection1">
-   <h3>This is about fmri</h3>
-   <p>fmri is one of the workflows we will be building</p>
-   <p>Here we are providing short description about fmri</p>
+   <h3>FMRI</h3>
+   <p>Functional magnetic resonance imaging or functional MRI (fMRI) measures brain activity by detecting changes associated with blood flow. This technique relies on the fact that cerebral blood flow and neuronal activation are coupled. When an area of the brain is in use, blood flow to that region also increases</p>
+  
    </br>
    </br>
 </div>
 <div class = "container" style="display: none" id="selection2">
-   <h3>This is about neuron</h3>
-   <p>Neuron is one of the workflows we will be building</p>
-   <p>Here we are providing short description about neuron</p>
+   <h3>NEURON</h3>
+   <p>A neuron is an electrically excitable cell that receives, processes, and transmits information through electrical and chemical signals. These signals between neurons occur via specialized connections called synapses. Neurons can connect to each other to form neural networks. Neurons are major components of the brain and spinal cord of the central nervous system, and of the autonomic ganglia of the peripheral nervous system.</p>
+   
    </br>
    </br>
 </div>
 <div class = "container" style="display: none" id="selection3">
-   <h3>This is about wcgna</h3>
-   <p>wgcna is one of the workflows we will be building</p>
-   <p>Here we are providing short description about wgnca</p>
+   <h3>WGCNA </h3>
+   <p>Weighted correlation network analysis, also known as weighted gene co-expression network analysis (WGCNA), is a widely used data mining method especially for studying biological networks based on pairwise correlations between variables. While it can be applied to most high-dimensional data sets, it has been most widely used in genomic applications. It allows one to define modules (clusters), intramodular hubs, and network nodes with regard to module membership, to study the relationships between co-expression modules, and to compare the network topology of different networks.</p>
    </br>
    </br>
 </div>
