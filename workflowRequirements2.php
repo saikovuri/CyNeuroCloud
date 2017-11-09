@@ -1,6 +1,7 @@
 <?php
    include("includes/header.php");
-   ?>
+   session_start();
+?>
 <div class="container">
    <h2 class="heading"> Neuron Workflow Requirements</h2>
 </div>

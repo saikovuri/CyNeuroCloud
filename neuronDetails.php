@@ -2,11 +2,12 @@
    include("includes/header.php");
    session_start();
 
-  if(!empty($_POST)){
+   if(!empty($_POST))
+   {
    $_SESSION['jobname'] = $_POST['jobname'];
    $_SESSION['jobdescription'] = $_POST['jobdescription'];
    header("Location:workflowRequirements.php");
-    }
+   }
   
    ?>
 <div class="container">
@@ -21,7 +22,7 @@
       <label for="jobname" class="col-sm-2 col-form-label">Task/Job Name:</label>
       <div class="col-sm-5">
    
-      <input type="text" id="jobname" class="form-control" name="jobname" value="<?php echo $_SESSION['jobname'];?>"/>
+      <input type="text" id="jobname" class="form-control" name="jobname" value = '<?php echo isset($_SESSION['jobname']) ? $_SESSION['jobname'] : ''; ?>' />
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
@@ -35,7 +36,9 @@
       </div>
       <label for="description" class="col-sm-2 col-form-label">Description of the Task/Job:</label>
       <div class="col-sm-5">
-         <input type="text" id="descr" name="jobdescription" class="form-control" id="jobdescription" value="<?php echo $_SESSION['jobdescription'];?>"/>
+         <input type="text" id="descr" name="jobdescription" class="form-control" id="jobdescription" value = '<?php echo isset($_SESSION['jobdescription']) ? $_SESSION['jobdescription'] : ''; ?>' />
+
+         
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
