@@ -1,5 +1,6 @@
 <?php
    include("includes/header.php");
+    
    ?>
 <div class="container">
    <h2 class="heading"> Neuron Workflow Requirements</h2>
@@ -25,7 +26,7 @@
       </div>
       
       <div class="col-sm-1">
-         <button style="width: 60px" type="submit" class="btn btn-block btn-primary" name="btn-login">Next</button>
+         <a class="btn btn-primary" href="workflowRequirements4.php">Next</a>
       </div>
       <div class="col-sm-5">
       </div>

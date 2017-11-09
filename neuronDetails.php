@@ -1,7 +1,6 @@
 <?php
    include("includes/header.php");
    session_start();
-
    if(!empty($_POST))
    {
    $_SESSION['jobname'] = $_POST['jobname'];
@@ -15,29 +14,28 @@
 </div>
 </br>
 </br>
-<form method='POST' action='' autocomplete="off">
+<form method='POST' name="NeuronDetailsForm" action='' autocomplete="off" onsubmit="return validateForm()">
    <div class="form-group row">
       <div class="col-sm-2">
       </div>
       <label for="jobname" class="col-sm-2 col-form-label">Task/Job Name:</label>
       <div class="col-sm-5">
    
-      <input type="text" id="jobname" class="form-control" name="jobname" value = '<?php echo isset($_SESSION['jobname']) ? $_SESSION['jobname'] : ''; ?>' />
+         <input type="text" id="jobname" class="form-control" name="jobname" value = '<?php echo isset($_SESSION['jobname']) ? $_SESSION['jobname'] : ''; ?>' />
+         <div id = "jobname_error" ></div>
       </div>
       <div class="tooltip col-sm-2" style="color: black">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext">Task/Job Name</span>
       </div>
    </div>
-
-
    <div class="form-group row">
       <div class="col-sm-2">
       </div>
       <label for="description" class="col-sm-2 col-form-label">Description of the Task/Job:</label>
       <div class="col-sm-5">
          <input type="text" id="descr" name="jobdescription" class="form-control" id="jobdescription" value = '<?php echo isset($_SESSION['jobdescription']) ? $_SESSION['jobdescription'] : ''; ?>' />
-
+         <div id = "jobdescription_error" ></div>
          
       </div>
       <div class="tooltip col-sm-2" style="color: black">

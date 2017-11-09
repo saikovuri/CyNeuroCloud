@@ -1,3 +1,19 @@
+	function validateForm() {
+         var x = document.forms["NeuronDetailsForm"]["jobname"].value;
+         var y = document.forms["NeuronDetailsForm"]["jobdescription"].value;
+            if (x == "") {
+               document.getElementById("jobname_error").style.color = "#ff0000";
+               document.getElementById('jobname_error').innerHTML="Please enter a valid job name";
+               
+            }
+            if (y == "") {
+               document.getElementById("jobdescription_error").style.color = "#ff0000";
+               document.getElementById('jobdescription_error').innerHTML="Please enter a valid job description";
+               return false;
+            }
+      }
+
+
 	$(document).ready(function() {
 
 	    $('input:radio[name=optradio]').click(function() {
@@ -86,9 +102,11 @@
 $(document).ready(function() {
 
 $("select").change(function() {
-var e = document.getElementById("typesDropdown");
-var limit = e.options[e.selectedIndex].text;
+// var e = document.getElementById("typesDropdown");
+// var limit = e.options[e.selectedIndex].text;
 $('input.single-checkbox').on('click', function(evt) {
+	var e = document.getElementById("typesDropdown");
+	var limit = e.options[e.selectedIndex].text;
    if($(this).siblings(':checked').length >= limit) {
        this.checked = false;
    }
