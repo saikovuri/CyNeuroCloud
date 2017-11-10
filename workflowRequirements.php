@@ -12,10 +12,18 @@
    }
    ?>
 <div class="container">
-   <h2 class="heading"> Neuron Workflow Requirements</h2>
+    <h2 align="margin-left"> Neuron Workflow Requirements</h2>
+
+    <div class="row">
+<div class="col-md-12">
+
+<img src = "images/nav1.png"  alt= "nav1" width="40%" height="50px" >
+
 </div>
-</br>
-</br>
+</div>
+</div>
+
+</br></br>
 <form method="post" action="" autocomplete="off">
    <div class="form-group row">
       <div class="col-sm-2">
@@ -51,19 +59,18 @@
    <div class="form-group row">
       <div class="col-sm-2">
       </div>
-      <label for="description" class="col-sm-2 col-form-label">Type of Input:</label>
-      <div class="tooltip col-sm-2" style="color: black; margin-top: 1px; ">
+      <label for="description" class="col-sm-2 col-form-label">Connectivity Matrix:</label>
+     <!--  <div class="tooltip col-sm-2" style="color: black; margin-top: 1px; ">
          <span class="glyphicon glyphicon-question-sign"></span>
          <span class="tooltiptext" style="width: 250px">Random selection or through csv files</span>
-      </div>
-   </div>
-   <div class="form-group row">
+      </div> -->
+      <div class="form-group row">
       <div class="col-sm-4">
       </div>
       <div class="col-sm-6">
-         <label><input type="radio" name="optradio" value = '1'>   Generate Randomly based on % of connections between Neurons</label>
+         <label><input type="radio" name="optradio" value = '1'>   Generate randomly based on % of connections between Neurons</label>
       </div>
-      <div class="col-sm-12" style="display: none" id="selection1">
+       <div class="col-sm-12" style="display: none" id="selection1">
          <div class="col-sm-4">
          </div>
          <div class="col-sm-6" style="margin-bottom: 10px; margin-top: 10px"> 
@@ -85,32 +92,60 @@
       <div class="col-sm-4">
       </div>
       <div class="col-sm-6">
-         <label><input value='2' type="radio" name="optradio">   Upload Connectivity and Weight Matrix files</label>
+         <label><input value='2' type="radio" name="optradio" style="margin-left: 5px ">   Upload Connectivity Matrix file</label>
       </div>
       <div class="form-group row" style="display: none" id="connectivity">
-         <div class="col-sm-5">
+         <div class="col-sm-4">
          </div>
-         <label for="connectivityMatrix" class="col-sm-2 col-form-label">Connectivity Matrix</label>
+         <!-- <label for="connectivityMatrix" class="col-sm-2 col-form-label">Connectivity Matrix</label> -->
          <div class="col-sm-3">
             <input type="file" name="ConnectivityMatrix" id="ConnectivityMatrix">
          </div>
-         <div class="col-sm-2">
-         </div>
-      </div>
-      <div class="form-group row" style="display: none" id="weight">
          <div class="col-sm-5">
          </div>
-         <label for="weightMatrix" class="col-sm-2 col-form-label">Weight Matrix</label>
+      </div>
+      
+      <div class="col-sm-4">
+      </div>
+   </div> 
+   
+   </div>
+
+
+<div class="form-group row">
+      <div class="col-sm-2">
+      </div>
+      <label for="description" class="col-sm-2 col-form-label">Weight Matrix:</label>
+      <div class="form-group row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-6">
+         <label><input type="radio" name="optradio1" value = '3'>   Generate weights Randomly</label>
+      </div>
+       
+     
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-6">
+         <label><input value='4' type="radio" name="optradio1" style="margin-left: 5px ">   Upload Weight Matrix file</label>
+      </div>
+      <div class="form-group row" style="display: none" id="weight">
+         <div class="col-sm-4">
+         </div>
+         
          <div class="col-sm-3">
             <input type="file" name="WeightMatrix" id="WeightMatrix">
          </div>
-         <div class="col-sm-2">
+         <div class="col-sm-5">
          </div>
       </div>
+      
       <div class="col-sm-4">
       </div>
-   </div>
+   </div> 
    </br>
+   </div>
+      <!-- </br> -->
    <div class="form-actions" style="margin-left:50px ">
       <div class="col-sm-5">
       </div>

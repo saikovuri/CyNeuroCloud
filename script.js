@@ -13,7 +13,7 @@
             }
       }
 
-      
+
 
 
 	$(document).ready(function() {
@@ -27,11 +27,13 @@
 
 	        if ($(this).val() == 2) {
 	            document.getElementById("connectivity").style.display = "block";
-	             document.getElementById("weight").style.display = "block";
+	             
 	        } else {
 	            document.getElementById("connectivity").style.display = "none";
-	             document.getElementById("weight").style.display = "none";
+	             
 	        }
+
+	      
 
 	    });
 	});
@@ -42,16 +44,10 @@
 
 	    $('input:radio[name=optradio1]').click(function() {
 	       
-		    if ($(this).val() == 3) {
-	            document.getElementById("selection3").style.display = "block";
+		    if ($(this).val() == 4) {
+	            document.getElementById("weight").style.display = "block";
 	        } else {
-	            document.getElementById("selection3").style.display = "none";
-	        }
-
-	        if ($(this).val() == 4) {
-	            document.getElementById("selection4").style.display = "block";
-	        } else {
-	            document.getElementById("selection4").style.display = "none";
+	            document.getElementById("weight").style.display = "none";
 	        }
 	    });
 	});
