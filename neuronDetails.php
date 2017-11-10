@@ -50,7 +50,7 @@
             <div class="panel panel-primary" style="border-color: #404040" >
                <div  class="panel-heading panel-heading-custom" >Drag and drop the required applications onto the workflow portion</div>
                <div class="panel-body" >
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                      <div class="panel panel-primary" style="border-color: #404040">
                         <div class="panel-heading panel-heading-custom" >Existing Apps</div>
                         <div class="panel-body">
@@ -62,7 +62,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-md-6"> 
+                  <div class="col-md-4"> 
                      <div class="panel panel-primary" style="border-color: #404040">
                         <div class="panel-heading panel-heading-custom">Add monitoring</div>
                         <div class="panel-body">
@@ -115,7 +115,7 @@
                      </div>
                   </div>
                   <div class="col-md-offset-5 col-md-1">
-                     <h1><a href="neuronDetails.php"><span style="color: #404040; margin-left: 50px " class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></h1>
+                     <h1><a href="neuronDetails.php"><span style="color: #404040; margin-left: 50px; font-size: 20px" class="glyphicon glyphicon-refresh" aria-hidden="true"></span></a></h1>
                   </div>
                </div>
             </div>
@@ -139,7 +139,6 @@
 </br>
 </br>
 </br>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
    <script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>

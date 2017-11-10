@@ -82,29 +82,28 @@ $(document).ready(function() {
             }
         }
     );
+    // $("#publish").click(function() {
+    //     if (confirm("Are you sure you want to publish your Application ?")) {
 
-    $("#publish").click(function() {
-        if (confirm("Are you sure you want to publish your Application ?")) {
+    //     } else {
+    //         return false;
+    //     }
+    // });
 
-        } else {
-            return false;
-        }
-    });
+    // $("#unpublish").click(function() {
+    //     if (confirm("Are you sure you want to un-publish your Application ?")) {
 
-    $("#unpublish").click(function() {
-        if (confirm("Are you sure you want to un-publish your Application ?")) {
+    //     } else {
+    //         return false;
+    //     }
+    // });
 
-        } else {
-            return false;
-        }
-    });
+    // $("#delete").click(function() {
+    //     if (confirm("Are you sure you want to delete your Application ?")) {
 
-    $("#delete").click(function() {
-        if (confirm("Are you sure you want to delete your Application ?")) {
-
-        } else {
-            return false;
-        }
-    });
+    //     } else {
+    //         return false;
+    //     }
+    // });
 
 });
