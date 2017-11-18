@@ -20,6 +20,15 @@
     background: #404040; color: #fff;
 }
 
+
+.table th {
+      text-align: center;   
+   }
+.table td {
+      vertical-align: middle;
+   }
+
+
 .check_box
 {
   margin-right: 12px;

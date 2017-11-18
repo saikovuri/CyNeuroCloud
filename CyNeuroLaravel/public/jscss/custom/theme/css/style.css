@@ -1,0 +1,75 @@
+.panel-primary > .panel-heading-custom {
+    background: #404040; color: #fff;
+}
+
+
+.table th {
+      text-align: center;   
+   }
+.table td {
+      vertical-align: middle;
+   }
+
+
+.check_box
+{
+  margin-right: 12px;
+}
+
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+.heading{
+  font-weight:bold !important;
+ text-align: center; 
+ color:black
+}
+
+
+.glyphicon {
+    font-size: 15px;
+}
+
+.tooltip {
+    margin-top: 10px; 
+    position: relative;
+    display: inline-block;
+    opacity: 10 !important;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    height: 30px;
+    background-color: #e6e6e6;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.padding-top-10{
+  padding-top: 15px !important;
+}
+.padding-bottom-5{
+  padding-bottom: 5px !important;
+}
+
+#arrow {
+    -webkit-appearance:none;
+    outline: none;
+}
+
+.alert {
+   width:50%;    
+}

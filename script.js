@@ -22,6 +22,7 @@
 	        if ($(this).val() == 1) {
 	            document.getElementById("selection1").style.display = "block";
 	        } else {
+                
 	            document.getElementById("selection1").style.display = "none";
 	        }
 

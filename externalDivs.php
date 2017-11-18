@@ -19,8 +19,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="atoA1" name="atoA1" value = '<?php echo isset($_SESSION['atoA1']) ? $_SESSION['atoA1'] : ''; ?>' />
       </div>
-      <!-- <div class="col-sm-3" >
-      </div> -->
+      
       </br></br></br>
    </div>
 </div>
@@ -62,8 +61,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="neuronNumber2" name="neuronNumber2" value = '<?php echo isset($_SESSION['neuronNumber2']) ? $_SESSION['neuronNumber2'] : ''; ?>' />
       </div>
-     <!--  <div class="col-sm-3" >
-      </div> -->
+    
 </div>
    <div class="form-group row"  id="six" style="display: none">
       </br>
@@ -73,8 +71,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="ctoC1" name="atoA1" value = '<?php echo isset($_SESSION['ctoC1']) ? $_SESSION['ctoC1'] : ''; ?>' />
       </div>
-      <!-- <div class="col-sm-3" >
-      </div> -->
+      
       </br></br></br>
    </div>
 
@@ -90,8 +87,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="neuronNumber3" name="neuronNumber3" value = '<?php echo isset($_SESSION['neuronNumber3']) ? $_SESSION['neuronNumber3'] : ''; ?>' />
       </div>
-     <!--  <div class="col-sm-3" >
-      </div> -->
+ 
 </div>
    <div class="form-group row"  id="eight" style="display: none">
       </br>
@@ -101,8 +97,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="dtoD1" name="dtoD1" value = '<?php echo isset($_SESSION['dtoD1']) ? $_SESSION['dtoD1'] : ''; ?>' />
       </div>
-      <!-- <div class="col-sm-3" >
-      </div> -->
+     
       </br></br></br>
    </div>
 
@@ -117,8 +112,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="neuronNumber4" name="neuronNumber4" value = '<?php echo isset($_SESSION['neuronNumber4']) ? $_SESSION['neuronNumber4'] : ''; ?>' />
       </div>
-     <!--  <div class="col-sm-3" >
-      </div> -->
+ 
 </div>
    <div class="form-group row"  id="ten" style="display: none">
       </br>
@@ -128,8 +122,7 @@
       <div class="col-sm-3">
          <input type="text" class="form-control" id="etoE1" name="etoE1" value = '<?php echo isset($_SESSION['etoE1']) ? $_SESSION['etoE1'] : ''; ?>' />
       </div>
-      <!-- <div class="col-sm-3" >
-      </div> -->
+     
       </br></br></br>
    </div>
 

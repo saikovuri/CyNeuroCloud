@@ -1,13 +1,3 @@
-<head>
-   <style>
-   .table th {
-      text-align: center;   
-   }
-   .table td {
-      vertical-align: middle;
-   }
-   </style>
-</head>
 <?php
 include("includes/header.php");
 ?>
@@ -85,6 +75,6 @@ include("includes/header.php");
    <a class="btn btn-primary" href="Results.php">Next</a>
 </div>
 </br></br>
-</form>
+
 </body>
 </html>
