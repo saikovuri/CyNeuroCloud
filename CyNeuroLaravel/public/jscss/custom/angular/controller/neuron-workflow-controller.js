@@ -1,67 +1,124 @@
 system_app.controller('neuron-workflow-show', function($scope) {
   
-  $scope.page1 = true;
-  $scope.page2 = false;
-  $scope.page3 = false;
-  $scope.page4 = false;
-  $scope.page5 = false;
-  $scope.page6 = false;
+  $scope.firstPage = true;
+  $scope.networkPage2 = false;
+  $scope.networkPage3 = false;
+  $scope.networkPage4 = false;
+  $scope.networkPage5 = false;
+  $scope.networkPage6 = false;
   
   $scope.changeView = function(val){
-    if(val == 'view1'){
-      $scope.page1 = true;
-      $scope.page2 = false;
-      $scope.page3 = false;
-      $scope.page4 = false;
-      $scope.page5 = false;
-      $scope.page6 = false;
+    if(val == 'firstPage'){
+      $scope.firstPage = true;
+      $scope.networkPage2 = false;
+      $scope.networkPage3 = false;
+      $scope.networkPage4 = false;
+      $scope.networkPage5 = false;
+      $scope.networkPage6 = false;
       
-    } else if (val == 'view2') {
+    } else if (val == 'networkView2') {
      
-      $scope.page1 = false;
-      $scope.page2 = true;
-      $scope.page3 = false;
-      $scope.page4 = false;
-      $scope.page5 = false;
-      $scope.page6 = false;
+      $scope.firstPage = false;
+      $scope.networkPage2 = true;
+      $scope.networkPage3 = false;
+      $scope.networkPage4 = false;
+      $scope.networkPage5 = false;
+      $scope.networkPage6 = false;
       
-    } else if (val == 'view3') {
-      $scope.page1 = false;
-      $scope.page2 = false;
-      $scope.page3 = true;
-      $scope.page4 = false;
-      $scope.page5 = false;
-      $scope.page6 = false;
-      
-    }
-    else if (val == 'view4') {
-      $scope.page1 = false;
-      $scope.page2 = false;
-      $scope.page3 = false;
-      $scope.page4 = true;
-      $scope.page5 = false;
-      $scope.page6 = false;
+    } else if (val == 'networkView3') {
+      $scope.firstPage = false;
+      $scope.networkPage2 = false;
+      $scope.networkPage3 = true;
+      $scope.networkPage4 = false;
+      $scope.networkPage5 = false;
+      $scope.networkPage6 = false;
       
     }
-    else if (val == 'view5') {
-      $scope.page1 = false;
-      $scope.page2 = false;
-      $scope.page3 = false;
-      $scope.page4 = false;
-      $scope.page5 = true;
-      $scope.page6 = false;
+    else if (val == 'networkView4') {
+      $scope.firstPage = false;
+      $scope.networkPage2 = false;
+      $scope.networkPage3 = false;
+      $scope.networkPage4 = true;
+      $scope.networkPage5 = false;
+      $scope.networkPage6 = false;
+      
+    }
+    else if (val == 'networkView5') {
+      $scope.firstPage = false;
+      $scope.networkPage2 = false;
+      $scope.networkPage3 = false;
+      $scope.networkPage4 = false;
+      $scope.networkPage5 = true;
+      $scope.networkPage6 = false;
       
     }
 
-    else if (val == 'view6') {
-      $scope.page1 = false;
-      $scope.page2 = false;
-      $scope.page3 = false;
-      $scope.page4 = false;
-      $scope.page5 = false;
-      $scope.page6 = true;
+    else if (val == 'networkView6') {
+      $scope.firstPage = false;
+      $scope.networkPage2 = false;
+      $scope.networkPage3 = false;
+      $scope.networkPage4 = false;
+      $scope.networkPage5 = false;
+      $scope.networkPage6 = true;
       
     }
+    
+  }
+
+
+  
+  $scope.singlePage1 = false;
+  $scope.singlePage2 = false;
+  $scope.singlePage3 = false;
+  $scope.singlePage4 = false;
+  
+
+  $scope.singlechangeView = function(val){
+    if(val == 'firstPage'){
+      $scope.firstPage = true;
+      $scope.singlePage1 = false;
+      $scope.singlePage2 = false;
+      $scope.singlePage3 = false;
+      $scope.singlePage4 = false;
+     
+      
+    } else if (val == 'singleView1') {
+     
+      $scope.firstPage = false;
+      $scope.singlePage1 = true;
+      $scope.singlePage2 = false;
+      $scope.singlePage3 = false;
+      $scope.singlePage4 = false;
+      
+    } else if (val == 'singleView2') {
+      $scope.firstPage = false;
+      $scope.singlePage1 = false;
+      $scope.singlePage2 = true;
+      $scope.singlePage3 = false;
+      $scope.singlePage4 = false;
+      
+      
+    }
+    else if (val == 'singleView3') {
+      $scope.firstPage = false;
+      $scope.singlePage1 = false;
+      $scope.singlePage2 = false;
+      $scope.singlePage3 = true;
+      $scope.singlePage4 = false;
+      
+      
+    }
+    else if (val == 'singleView4') {
+      $scope.firstPage = false;
+      $scope.singlePage1 = false;
+      $scope.singlePage2 = false;
+      $scope.singlePage3 = false;
+      $scope.singlePage4 = true;
+      
+      
+    }
+
+   
     
   }
   

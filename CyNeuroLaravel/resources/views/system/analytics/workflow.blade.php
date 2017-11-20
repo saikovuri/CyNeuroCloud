@@ -21,12 +21,13 @@
 <div class="tab-content">
    <!--Panel 1-->
    <div class="tab-pane fade in show active" id="panel5" role="tabpanel" ng-controller="neuron-workflow-show" >
-        @include('system.layouts.view1')
-        @include('system.layouts.view2')
-        @include('system.layouts.view3')
-        @include('system.layouts.view4')
-        @include('system.layouts.view5')
-        @include('system.layouts.view6')
+        @include('system.layouts.firstPage')
+        @include('system.layouts.networkView2')
+        @include('system.layouts.networkView3')
+        @include('system.layouts.networkView4')
+        @include('system.layouts.networkView5')
+        @include('system.layouts.networkView6')
+         @include('system.layouts.singleView1')
 
       </div>
       <!--/.Panel 1-->
