@@ -27,7 +27,10 @@
         @include('system.layouts.networkView4')
         @include('system.layouts.networkView5')
         @include('system.layouts.networkView6')
-         @include('system.layouts.singleView1')
+        @include('system.layouts.singleView1')
+        @include('system.layouts.singleView2')
+        @include('system.layouts.singleView3')
+        @include('system.layouts.singleView4')
 
       </div>
       <!--/.Panel 1-->

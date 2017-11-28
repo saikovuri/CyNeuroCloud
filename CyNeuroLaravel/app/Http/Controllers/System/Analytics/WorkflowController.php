@@ -138,6 +138,23 @@ class WorkflowController extends Controller
 
     }
 
+    public function store_params(Request $request)
+    {
+        // Validate the request...
+
+        $param = new Parameters;
+
+        $param->duration = $request->duration;
+
+        $param->amplitude = $request->amplitude;
+
+        $param->weight = $request->weight;
+
+        $param->interval = $request->interval;
+
+        $param->save();
+    }
+
 
 
 }
