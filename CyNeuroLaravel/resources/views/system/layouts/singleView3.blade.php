@@ -2,9 +2,9 @@
    <div class="container">
       <h2 align="margin-left"> Neuron Workflow Requirements</h2>
       <div class="row">
-         <div class="col-md-12">
+        <!--  <div class="col-md-12">
             <img src="{{ asset('jscss/custom/theme/img/CyNeuroUI/nav1.png') }}"  alt= "nav1" width="40%" height="50px" >
-         </div>
+         </div> -->
       </div>
       </br></br>
       <form method="post" action="store" autocomplete="off">
@@ -19,45 +19,27 @@
             <div class="col-md-4">
             </div>
             <div class="col-md-6">
-               <label><input type="radio" name="cur_inj_mod" value = '3'>   Current injection model</label>
+               <label><input id="inj_mod" checked type="radio" name="inj_mod" value = '1'>   Current injection model</label>
             </div>
             <div class="col-md-2">
             </div>
             <div class="col-md-4">
             </div>
             <div class="col-md-6">
-               <label><input value='4' type="radio" name="syn_mod">   Synapse model</label>
+               <label><input id="inj_mod" value='2' type="radio" name="inj_mod">   Synapse model</label>
             </div>
             <div class="col-md-2">
             </div>
-            <div class="form-group row col-md-12" style="display: none" id="weight">
-               <div class="col-md-4">
-               </div>
-               <div class="col-md-4">
-                  <input type="file" name="WeightMatrix" id="WeightMatrix">
-               </div>
-               <div class="col-md-4">
-               </div>
-            </div>
+           
          </div>
-         <div class="form-group row col-md-12">
+
+         <div style="display: block;" id="curr_inj">
+          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
-            <label for="jobname" class="col-md-2 col-form-label">a. Duration:</label>
+            <label for="jobname" class="col-md-2 col-form-label">a. Delay:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="duration" name="duration" value = '<?php echo isset($_SESSION['duration']) ? $_SESSION['duration'] : ''; ?>' />
-            </div>
-            <div class="tooltip col-md-2" style="color: black">
-               <span class="glyphicon glyphicon-question-sign"></span>
-               <span class="tooltiptext">Duration</span>
-            </div>
-         </div>
-         <div class="form-group row col-md-12">
-            <div class="col-md-2">
-            </div>
-            <label for="jobname" class="col-md-2 col-form-label">b. Amplitude:</label>
-            <div class="col-md-5">
-               <input type="text" class="form-control" id="amplitude" name="amplitude" value = '<?php echo isset($_SESSION['amplitude']) ? $_SESSION['amplitude'] : ''; ?>' />
+               <input type="text" class="form-control" id="delay" name="delay" value = "10" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -67,37 +49,84 @@
          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
-            <label for="jobname" class="col-md-2 col-form-label">c. Synaptic Drive:</label>
-            <div class="col-md-10">
-            	<div class="form-group row col-md-12">
-            		<div class="col-md-4">
-            		</div>
-            		<label for="jobname" class="col-md-2 col-form-label">c1. Interval:</label>
-            		<div class="col-md-4">
-               			<input type="text" class="form-control" id="interval" name="interval" value = '<?php echo isset($_SESSION['interval']) ? $_SESSION['interval'] : ''; ?>' />
-            		</div>
-            		<div class="tooltip col-md-2" style="color: black">
-               			<span class="glyphicon glyphicon-question-sign"></span>
-               			<span class="tooltiptext">Interval</span>
-            		</div>
-         		</div>
-         		<div class="form-group row col-md-12">
-            		<div class="col-md-4">
-            		</div>
-            		<label for="jobname" class="col-md-2 col-form-label">c2. Weight:</label>
-            		<div class="col-md-4">
-               			<input type="text" class="form-control" id="weight" name="weight" value = '<?php echo isset($_SESSION['weight']) ? $_SESSION['weight'] : ''; ?>' />
-            		</div>
-            		<div class="tooltip col-md-2" style="color: black">
-               			<span class="glyphicon glyphicon-question-sign"></span>
-               			<span class="tooltiptext">Weight</span>
-            		</div>
-         		</div>
+            <label for="jobname" class="col-md-2 col-form-label">b. Duration:</label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="duration" name="duration" value = "50" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Duration</span>
+            </div>
+         </div>
+         <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">c. Amplitude:</label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="amplitude" name="amplitude" value = "1" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Amplitude</span>
+            </div>
+         </div>
+         </div>
+
+         <div style="display: none" id="synapse_inj">
+      <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">a. Interval:</label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="interval" name="interval" value = "10"/>
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Interval</span>
+            </div>
+         </div>
+         <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">b. Number:</label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="number" name="number" value ="5"/>
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Number</span>
+            </div>
+         </div>
+         <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">c. Start:</label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="start" name="start" value = "10" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Start</span>
             </div>
          </div>
 
+         <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">d. Noise:</label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="noise" name="noise" value = "0" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Noise</span>
+            </div>
+         </div>
+         </div>
+        
+
        </form>
-       <div class="form-actions" style="display: block" id="button3">
+       <div class="form-actions" style="display: block; margin-top: 135px;" id="button3">
          <br></br>
          <input type="Submit" ng-click="singlechangeView('singleView2')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp
          <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-right" value="Next" >

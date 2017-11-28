@@ -67,6 +67,24 @@ $(document).ready(function() {
 	    });
 	});
 
+    $(document).ready(function() {
+
+        $('input:radio[name=inj_mod]').click(function() {
+           
+            if ($(this).val() == 1) {
+                document.getElementById("curr_inj").style.display = "block";
+            } else {
+                document.getElementById("curr_inj").style.display = "none";
+            }
+
+             if ($(this).val() == 2) {
+                document.getElementById("synapse_inj").style.display = "block";
+            } else {
+                document.getElementById("synapse_inj").style.display = "none";
+            }
+        });
+    });
+
 
 $(document).ready(function() {
 
@@ -94,8 +112,7 @@ $('input.single-checkbox').on('click', function(evt) {
 	var e = document.getElementById("typesDropdown");
 	var limit = e.options[e.selectedIndex].text;
    if($(this).siblings(':checked').length >= limit) {
-	// $('input:checkbox').removeAttr('checked');
-   	   this.checked = false;
+	   this.checked = false;
    }
 
 	 

@@ -3,11 +3,11 @@
 <div class="container">
    <h3 class="margin-left">Single Cell Neuron Workflow Requirements</h3>
     <div class="row">
-		<div class="col-md-12">
+		<!-- <div class="col-md-12">
 
 			<img src="{{ asset('jscss/custom/theme/img/CyNeuroUI/nav3.png') }}"  alt= "nav3" width="40%" height="50px" >
 
-		</div>
+		</div> -->
 	</div>
 </div>
 </br>
@@ -37,7 +37,7 @@
      </div>
 </div>
 
-<div class="form-actions" style="display: block" id="button5">
+<div class="form-actions" style="display: block; margin-top: 75px;" id="button5">
          <input type="Submit" ng-click="singlechangeView('singleView3')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp
          <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-right" value="Next" >
       </div>

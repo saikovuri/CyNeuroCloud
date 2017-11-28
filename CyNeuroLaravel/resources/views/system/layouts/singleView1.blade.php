@@ -2,13 +2,13 @@
    <div class="container">
       <h2 align="margin-left"> Single Neuron Workflow Requirements</h2>
       <div class="row">
-         <div class="col-md-12">
+         <!-- <div class="col-md-12">
             <img src="{{ asset('jscss/custom/theme/img/CyNeuroUI/nav1.png') }}"  alt= "nav1" width="40%" height="50px" >
-         </div>
+         </div> -->
       </div>
       </br></br>
       <div class="col-md-12">
-      <div style="background:transparent !important ; display: block" class=" jumbotron"  >
+     <!--  <div style="background:transparent !important ; display: block" class=" jumbotron"  >
          <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-5">
@@ -23,7 +23,7 @@
          <div style="text-align:center">
                <p style="font-weight: bold !important" class = "text-center"> Click on the Geometry </p>
             </div>
-      </div>
+      </div> -->
       </div>
       <form method="post" action="" autocomplete="off">
          <div class="form-group row col-md-12">
@@ -53,7 +53,7 @@
          </br>   
 
       </form>
-      <div class="form-actions" style="display: block" id="button3">
+      <div class="form-actions" style="display: block; margin-top: 135px;" id="button3">
             <input type="Submit" ng-click="singlechangeView('firstPage')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp
             <input type="Submit" ng-click="singlechangeView('singleView2')" class="btn btn-primary pull-right" value="Next" >
       </div>
