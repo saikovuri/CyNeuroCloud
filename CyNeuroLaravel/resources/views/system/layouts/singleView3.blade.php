@@ -7,7 +7,7 @@
          </div> -->
       </div>
       </br></br>
-      <form method="post" action="store" autocomplete="off">
+      
       	 <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
@@ -125,7 +125,7 @@
          </div>
         
 
-       </form>
+       
        <div class="form-actions" style="display: block; margin-top: 135px;" id="button3">
          <br></br>
          <input type="Submit" ng-click="singlechangeView('singleView2')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp

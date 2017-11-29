@@ -8,7 +8,7 @@
       </div>
       </br></br>
       
-      <form method="post" action="" autocomplete="off">
+      
          <h2>  Choose the channels:  </h2> 
          <div class="form-group row col-m2-12" style="display: block; margin-top: 25px;">
             
@@ -22,9 +22,7 @@
                   <input class="channel-checkbox" id="c3" type="checkbox" name="channel-checkbox" value="C"> &nbsp Calcium &nbsp &nbsp
             </div>                  
          </div>
-      </form>
-
-
+      
 
       <div class="form-actions" style="display: block; margin-top: 65px;" id="button3">
          <br></br>

@@ -86,6 +86,32 @@ $(document).ready(function() {
     });
 
 
+     $(document).ready(function() {
+
+        $('input:radio[name=geometry]').click(function() {
+           
+            if ($(this).val() == 1) {
+                document.getElementById("single").style.display = "block";
+            } else {
+                document.getElementById("single").style.display = "none";
+            }
+
+             if ($(this).val() == 2) {
+                document.getElementById("double").style.display = "block";
+            } else {
+                document.getElementById("double").style.display = "none";
+            }
+
+             if ($(this).val() == 3) {
+                document.getElementById("triple").style.display = "block";
+            } else {
+                document.getElementById("triple").style.display = "none";
+            }
+        });
+    });
+
+
+
 $(document).ready(function() {
 
 	    $('input:image[name=arrowdown]').click(function() {
