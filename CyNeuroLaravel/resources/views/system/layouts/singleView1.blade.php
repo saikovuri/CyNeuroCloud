@@ -35,12 +35,26 @@
             <div class="col-md-2">
             </div>
             <label for="jobname" class="col-md-2 col-form-label">Soma length : </label>
+
+            {!! Form::text('name') !!}
             <div class="col-md-5">
                <input type="text" class="form-control" id="somaLength" name="somaLength" value = "" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
                <span class="tooltiptext">Soma length</span>
+            </div>
+         </div>
+         <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">Soma Diameter : </label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="somaDiameter" name="somaDiameter" value = "" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Soma Diameter</span>
             </div>
          </div>
          <div class="form-group row col-md-12">
@@ -74,6 +88,18 @@
                <span class="tooltiptext">Soma length</span>
             </div>
          </div>
+          <div class="form-group row col-md-12">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">Soma Diameter : </label>
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="somaDiameter" name="somaDiameter" value = "" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Soma Diameter</span>
+            </div>
+         </div>
          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
@@ -90,13 +116,13 @@
          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
-            <label for="jobname" class="col-md-2 col-form-label">Dendri length:</label>
+            <label for="jobname" class="col-md-2 col-form-label">Axon length:</label>
             <div class="col-md-5">
                <input type="text" class="form-control" id="dendriLength" name="dendriLength" value = ""/>
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
-               <span class="tooltiptext">Dendri length</span>
+               <span class="tooltiptext">Axon length</span>
             </div>
          </div>
          </br>   
@@ -133,9 +159,9 @@
          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
-            <label for="jobname" class="col-md-2 col-form-label">Dendri length:</label>
+            <label for="jobname" class="col-md-2 col-form-label">a) Axon length:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="dendriLength" name="dendriLength" value = ""/>
+               <input type="text" class="form-control" id="axonLength1" name="axonLength1" value = ""/>
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -146,9 +172,9 @@
          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
-            <label for="jobname" class="col-md-2 col-form-label">Dendri length:</label>
+            <label for="jobname" class="col-md-2 col-form-label">b) Axon length:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="dendriLength" name="dendriLength" value = ""/>
+               <input type="text" class="form-control" id="axonLength2" name="axonLength2" value = ""/>
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -159,9 +185,9 @@
          <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
-            <label for="jobname" class="col-md-2 col-form-label">Dendri length:</label>
+            <label for="jobname" class="col-md-2 col-form-label">c) Axon length:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="dendriLength" name="dendriLength" value = ""/>
+               <input type="text" class="form-control" id="axonLength3" name="axonLength3" value = ""/>
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
