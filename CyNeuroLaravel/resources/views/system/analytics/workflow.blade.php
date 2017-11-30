@@ -38,24 +38,6 @@
 
         @include('system.layouts.singleView4')
     </form>
-      
-  <form action= '' method ='GET' name="neuron" >
-
-    <label for="jobname" class="col-md-2 col-form-label">Dendri length:
-      
-       <input type="text" class="form-control" id="abcd" name="abcd" />
-       
-    </label>
-
-      <label for="jobname" class="col-md-2 col-form-label">Diameter:
-      
-       <input type="text" class="form-control" id="efgh" name="efgh" />
-       
-    </label>
-
-    <button type="button" class="btn btn-warning" ng-click="run_func()">Run</button>
-  </form>
-
 
 
 </div>
