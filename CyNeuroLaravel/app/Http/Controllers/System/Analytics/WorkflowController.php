@@ -142,18 +142,76 @@ class WorkflowController extends Controller
     {
         // Validate the request...
 
-    
-        $name1 = $request->name;
-        $name2 = $request->name1;
-    
+        if($request->id ==1)
+        {
+        $delay = $request->delay;
+        $duration = $request->duration;  
+        $amplitude = $request->amplitude;  
 
-            $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
-            $txt = "ID:" . $name1. PHP_EOL;
+        $myfile = fopen("SimpleCurrentInjection.cfg", "w") or die("Unable to open file!");
+            $txt = "[Simulation Parameters]". PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = $name2.PHP_EOL;
+            $txt = "v_init = -60". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "tstop = 100". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "dt = 0.001". PHP_EOL;
+            fwrite($myfile, $txt);
+             $txt = PHP_EOL;
+            fwrite($myfile, $txt);
+
+
+            $txt = "[Stimulation Parameters]". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "delay = " . $delay. PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "duration = " . $duration. PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "amplitude = " . $amplitude. PHP_EOL;
             fwrite($myfile, $txt);
             fclose($myfile);
             
+           
+         
+        }
+
+        else if($request->id ==2)
+        {
+
+        $interval = $request->interval;
+        $number = $request->number;
+        $noise = $request->noise;
+        $start = $request->start;
+
+        $myfile = fopen("SimpleSynapse.cfg", "w") or die("Unable to open file!");
+
+            $txt = "[Simulation Parameters]". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "v_init = -60". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "tstop = 100". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "dt = 0.001". PHP_EOL;
+            fwrite($myfile, $txt);
+             $txt = PHP_EOL;
+            fwrite($myfile, $txt);
+
+
+            $txt = "[Stimulation Parameters]". PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "interval = " . $interval. PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "number = " . $number. PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "start = " . $start. PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = "noise = " . $noise. PHP_EOL;
+            fwrite($myfile, $txt);
+            fclose($myfile);
+        }
+        
+    
+
             return "Success";
 
         // $param->save();

@@ -7,17 +7,38 @@ system_app.controller('neuron-workflow-show', function($scope, $http) {
 
     $scope.run_func = function() {
 
-        var input_name = document.getElementById("abcd").value;
-        var input_name1 = document.getElementById("efgh").value;
-        var input_name2 = document.getElementById("somaLength").value;
-        var get_params = {
-            name : input_name,
-            name1 : input_name1
+        
+          if ($("input:radio[name=inj_mod]:checked").val() == 1) {
+            var delay = document.getElementById("delay").value;
+            var duration = document.getElementById("duration").value;
+            var amplitude = document.getElementById("amplitude").value;
+            var get_params = {
+            id :1,  
+            delay : delay,
+            duration : duration,
+            amplitude : amplitude
            
         };
-
-        console.log(input_name2);
-       
+        
+          }  
+         else if ($("input:radio[name=inj_mod]:checked").val() == 2) {
+            var interval = document.getElementById("interval").value;
+            var number = document.getElementById("number").value;
+            var start = document.getElementById("start").value;
+            var noise = document.getElementById("noise").value;
+            var get_params = {
+              id :2,
+            interval : interval,
+            number : number,
+            noise : noise,
+            start : start
+            
+           
+        };
+        
+          } 
+         
+      
         $http({
         method:'get',
         url:php_upload_input_test,

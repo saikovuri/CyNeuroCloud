@@ -2,9 +2,7 @@
    <div class="container">
       <h2 align="margin-left"> Neuron Workflow Requirements</h2>
       <div class="row">
-        <!--  <div class="col-md-12">
-            <img src="{{ asset('jscss/custom/theme/img/CyNeuroUI/nav1.png') }}"  alt= "nav1" width="40%" height="50px" >
-         </div> -->
+        
       </div>
       </br></br>
       
