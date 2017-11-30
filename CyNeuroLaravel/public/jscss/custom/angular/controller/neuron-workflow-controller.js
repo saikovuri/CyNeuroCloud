@@ -1,4 +1,19 @@
-system_app.controller('neuron-workflow-show', function($scope) {
+system_app.controller('neuron-workflow-show', function($scope, $http) {
+
+
+   $http({
+        method:'get',
+        url:php_upload_input_test,
+        // params:get_tools_list_params
+    }).then(function success(response, status, headers, config){
+
+        $scope.tool = response.data.length;
+        console.log($scope.tool)
+
+    }, function error(response, status, headers, config){
+    });
+
+
   
   $scope.firstPage = true;
   $scope.networkPage2 = false;

@@ -21,7 +21,8 @@
 <div class="tab-content">
    <!--Panel 1-->
    <div class="tab-pane fade in show active" id="panel5" role="tabpanel" ng-controller="neuron-workflow-show" >
-        
+
+
         @include('system.layouts.firstPage')
         @include('system.layouts.networkView2')
         @include('system.layouts.networkView3')
@@ -30,12 +31,30 @@
         @include('system.layouts.networkView6')
        
 
-        <form name="singleNeuron" method="" action="">
+        <form name="singleNeuron" >
         @include('system.layouts.singleView1')
         @include('system.layouts.singleView2')
         @include('system.layouts.singleView3')
+
         @include('system.layouts.singleView4')
-      </form>
+    </form>
+      
+  <form action= 'verify' method ='GET' name="neuron" >
+
+    <label for="jobname" class="col-md-2 col-form-label">Dendri length:
+      
+       <input type="text" class="form-control" id="dendri" name="dendri" value = "1"/>
+
+    </label>
+      
+
+
+  </form>
+
+
+
+
+
       </div>
       <!--/.Panel 1-->
       <!--Panel 2-->
@@ -144,13 +163,20 @@
 @section('javascript')
 <script>
    var php_get_tools_list_url = '{{ route('system.analytics.api_workflow_get_tools_list') }}';
+
+
    var php_get_run_workflow_url = '{{ route('system.analytics.api_workflow_run_workflow') }}';
+
    var php_get_job_statue_url = '{{ route('system.analytics.api_workflow_get_job_status') }}';
    var php_get_job_result_list_url = '{{ route('system.analytics.api_workflow_get_job_result_list') }}';
    var php_get_backend_data_to_server_url = '{{ route('system.analytics.api_workflow_get_backend_data_to_server') }}';
    
    var php_upload_input_url = '{{ route('system.UploadAPI.uploadWorkflowInput') }}';
-   
+
+   var php_upload_input_test = '{{ route('system.analytics.store_params') }}';
+
+    
+     
 </script>
 <script src="{{ asset('jscss/dropzone/dropzone.js') }}" type="text/javascript" ></script>
 <script src="{{ asset('jscss/custom/theme/js/neurondetails.js') }}" type="text/javascript" defer="defer"></script> 

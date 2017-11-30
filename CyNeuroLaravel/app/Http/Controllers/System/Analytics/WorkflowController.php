@@ -142,17 +142,12 @@ class WorkflowController extends Controller
     {
         // Validate the request...
 
-        $param = new Parameters;
+        
+        $length = $request->dendri; 
 
-        $param->duration = $request->duration;
+            return $length;
 
-        $param->amplitude = $request->amplitude;
-
-        $param->weight = $request->weight;
-
-        $param->interval = $request->interval;
-
-        $param->save();
+        // $param->save();
     }
 
 

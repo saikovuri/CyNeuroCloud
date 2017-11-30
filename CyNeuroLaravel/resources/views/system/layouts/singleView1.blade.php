@@ -36,7 +36,6 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">Soma length : </label>
 
-            {!! Form::text('name') !!}
             <div class="col-md-5">
                <input type="text" class="form-control" id="somaLength" name="somaLength" value = "" />
             </div>
