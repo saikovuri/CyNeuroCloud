@@ -39,23 +39,26 @@
         @include('system.layouts.singleView4')
     </form>
       
-  <form action= 'verify' method ='GET' name="neuron" >
+  <form action= '' method ='GET' name="neuron" >
 
     <label for="jobname" class="col-md-2 col-form-label">Dendri length:
       
-       <input type="text" class="form-control" id="dendri" name="dendri" value = "1"/>
-
+       <input type="text" class="form-control" id="abcd" name="abcd" />
+       
     </label>
+
+      <label for="jobname" class="col-md-2 col-form-label">Diameter:
       
+       <input type="text" class="form-control" id="efgh" name="efgh" />
+       
+    </label>
 
-
+    <button type="button" class="btn btn-warning" ng-click="run_func()">Run</button>
   </form>
 
 
 
-
-
-      </div>
+</div>
       <!--/.Panel 1-->
       <!--Panel 2-->
       <div class="tab-pane fade" id="panel6" role="tabpanel" ng-controller="analytics-workflow-create">
@@ -180,6 +183,7 @@
 </script>
 <script src="{{ asset('jscss/dropzone/dropzone.js') }}" type="text/javascript" ></script>
 <script src="{{ asset('jscss/custom/theme/js/neurondetails.js') }}" type="text/javascript" defer="defer"></script> 
+
 <script>
    var input_file_list = [];
    Dropzone.autoDiscover = false;

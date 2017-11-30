@@ -1,18 +1,39 @@
 system_app.controller('neuron-workflow-show', function($scope, $http) {
 
 
-   $http({
+
+
+
+
+    $scope.run_func = function() {
+
+        var input_name = document.getElementById("abcd").value;
+        var input_name1 = document.getElementById("efgh").value;
+        var input_name2 = document.getElementById("somaLength").value;
+        var get_params = {
+            name : input_name,
+            name1 : input_name1
+           
+        };
+
+        console.log(input_name2);
+       
+        $http({
         method:'get',
         url:php_upload_input_test,
-        // params:get_tools_list_params
+        params:get_params
+        
     }).then(function success(response, status, headers, config){
 
-        $scope.tool = response.data.length;
-        console.log($scope.tool)
+        // $scope.tool = response.arr1;
+        // console.log($scope.tool["name1"]);
+        
 
     }, function error(response, status, headers, config){
     });
 
+
+    };
 
   
   $scope.firstPage = true;

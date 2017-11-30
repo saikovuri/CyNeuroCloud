@@ -142,10 +142,19 @@ class WorkflowController extends Controller
     {
         // Validate the request...
 
-        
-        $length = $request->dendri; 
+    
+        $name1 = $request->name;
+        $name2 = $request->name1;
+    
 
-            return $length;
+            $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+            $txt = "ID:" . $name1. PHP_EOL;
+            fwrite($myfile, $txt);
+            $txt = $name2.PHP_EOL;
+            fwrite($myfile, $txt);
+            fclose($myfile);
+            
+            return "Success";
 
         // $param->save();
     }

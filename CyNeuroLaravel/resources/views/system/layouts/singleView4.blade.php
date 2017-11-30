@@ -39,7 +39,7 @@
 
 <div class="form-actions" style="display: block; margin-top: 75px;" id="button5">
          <input type="Submit" ng-click="singlechangeView('singleView3')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp
-         <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-right" value="Next" >
+         <input type="Submit" ng-click="run_func()" class="btn btn-primary pull-right" value="Next" >
       </div>
 </br></br>
 
