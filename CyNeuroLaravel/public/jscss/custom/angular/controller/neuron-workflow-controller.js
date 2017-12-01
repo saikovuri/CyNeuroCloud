@@ -1,4 +1,4 @@
-  system_app.controller('neuron-workflow-show', function($scope, $http) {
+  system_app.controller('neuron-workflow-show', function($scope, $http, $window) {
 
 
 
@@ -7,7 +7,7 @@
 
     $scope.run_func = function() {
 
-      
+
       if ($("input:radio[name=inj_mod]:checked").val() == 1) {
         var delay = document.getElementById("delay").value;
         var duration = document.getElementById("duration").value;
@@ -17,9 +17,9 @@
           delay : delay,
           duration : duration,
           amplitude : amplitude
-          
+
         };
-        
+
       }  
       else if ($("input:radio[name=inj_mod]:checked").val() == 2) {
         var interval = document.getElementById("interval").value;
@@ -32,25 +32,27 @@
           number : number,
           noise : noise,
           start : start
-          
-          
+
+
         };
-        
+
       } 
-      
-      
+
+
       $http({
         method:'get',
         url:php_upload_input_test,
         params:get_params
-        
+
       }).then(function success(response, status, headers, config){
 
-          // $scope.tool = response.arr1;
-          // console.log($scope.tool["name1"]);
+           //$scope.tool = response.data.val;
+           console.log(response.data);
+           $window.location.href = "http://" + $window.location.host + "/system/analytics/databworkflow_pageases_page#panel6";
           
 
         }, function error(response, status, headers, config){
+
         });
 
 
@@ -74,7 +76,7 @@
         $scope.networkPage6 = false;
         
       } else if (val == 'networkView2') {
-       
+
         $scope.firstPage = false;
         $scope.networkPage2 = true;
         $scope.networkPage3 = false;
@@ -137,10 +139,10 @@
         $scope.singlePage2 = false;
         $scope.singlePage3 = false;
         $scope.singlePage4 = false;
-        
+
         
       } else if (val == 'singleView1') {
-       
+
         $scope.firstPage = false;
         $scope.singlePage1 = true;
         $scope.singlePage2 = false;
@@ -175,7 +177,7 @@
         
       }
 
-      
+
       
     }
 
