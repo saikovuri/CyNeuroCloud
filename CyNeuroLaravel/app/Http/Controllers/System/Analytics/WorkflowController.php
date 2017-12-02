@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use App\Current_injection;
 use Redirect;
 use ZipArchive;
+use DB;
+use Exception;
 
 class WorkflowController extends Controller
 {
@@ -140,8 +142,7 @@ class WorkflowController extends Controller
     public function store_params(Request $request)
     {
 
-        $injection = new Current_injection;
-             
+        
         $val =0;
         // Validate the request...
 
@@ -181,10 +182,18 @@ class WorkflowController extends Controller
             $zip->close();
             $val =1;
 
-              $injection->delay= $delay;
-              $injection->duration=$duration;
-              $injection->amplitude=$amplitude;
-              $injection->save();
+                $injection = new Current_injection;
+             
+               $injection->delay= $delay;
+               $injection->duration=$duration;
+               $injection->amplitude=$amplitude;
+               $injection->save();
+
+    //         DB::table('current_injection')->insert(
+    //     array('delay' => $delay, 'duration' => $duration, 'amplitude' => $amplitude)
+    // );
+
+
         }
 
         else if($request->id ==2)
