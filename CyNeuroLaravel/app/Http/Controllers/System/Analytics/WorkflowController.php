@@ -5,6 +5,7 @@ namespace App\Http\Controllers\System\Analytics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Exception;
 use Redirect;
 
 class WorkflowController extends Controller
@@ -146,6 +147,7 @@ class WorkflowController extends Controller
 
         if($request->id ==1)
         {
+
         $delay = $request->delay;
         $duration = $request->duration;  
         $amplitude = $request->amplitude;  
@@ -214,15 +216,182 @@ class WorkflowController extends Controller
             $val =2;
         }
         
-    
+          //persist in database
+        //Set up field values for job and job_file
+        //waiting to do parameters until this is working
+        $template_id = 'neuron_cel';
+        $step_id = 1;
+        $user_id = 'test';
+        $job_name = 'test_name';
+        if($request->id ==1) {
+            $step_option_id = 0;
+            $file_id = 'SimpleCurrentInjection.cfg';
+        }
+
+        else if($request->id ==2) {
+            $step_option_id = 1;
+            $file_id = 'SimpleSynapse.cfg';
+        }
+
+        //create the arrays for the inserted rows
+        $job = ['template_id' => $template_id,
+        'step_id'=> $step_id,
+        'step_option_id'=> $step_option_id,
+        'user_id'=> $user_id,
+        'job_name'=> $job_name];
+
+        $job_file = 
+        ['template_id' => $template_id,
+        'step_id'=> $step_id,
+        'step_option_id'=> $step_option_id,
+        'user_id'=> $user_id,
+        'job_name'=> $job_name,
+        'file_id' => $file_id
+        ];
+
+
+        // Postponing transactions until one table is working
+        // going with job_file for the first one because of the timestamp column in job
+        // create a file for debugging - DBerror
+       //DB::beginTransaction(); 
+       $myfile = fopen("DBerror.txt", "w") or die("Unable to open file!");
+       try { 
+        fwrite($myfile, 'Testing_BEFORE_INSERT'. PHP_EOL);
+        fwrite($myfile, print_r($job_file, true));
+
+        // Here's where we try to insert
+       // DB::table('job')->insert($job); 
+        DB::table('job_file')->insert($job_file); 
+
+        // Does insert work? No.
+        //$test_job_file = DB::table('job_file')->where('template_id', 'neuron_cel')->value('template_id');
+        //fwrite($myfile, $test_job_file);
+
+        // known error - will throw exceptiion, so exception handling try/catch/finally is working
+        //$x = 1/0;
+
+        fwrite($myfile, 'Testing_NORMAL_FLOW_CONTINUES'. PHP_EOL);
+
+        //DB::commit(); 
+        } 
+        catch(Exception $ex) { 
+
+            
+            fwrite($myfile, 'Testing_CATCH'. PHP_EOL);
+            
+            fwrite($myfile, $ex->getMessage(). PHP_EOL);
+            
+            //DB::rollback(); 
+        }  
+        finally {
+            fwrite($myfile, 'Testing_FINALLY'. PHP_EOL);
+            fclose($myfile);
+
+            //return $val;
+            return $val;
+        }
+    }
+
+public function file_output(){
+
+}
+
+/*public function persist_job(Request $request) {
+        $val =0;
+        // Validate the request...
+
+        //fields for job table
+        /*$template_id = $request->template_id;
+        $step_id = $request->step_id;
+        $step_option_id= $request->step_option_id;
+        $user_id->$request->user_id;
+        $job_name->$request->job_name;
+                $job = 
+            ['template_id' => $request->template_id, 
+            'step_id'=> $request->step_id,
+            'step_option_id'=> $request->step_option_id,
+            'user_id'=> $request->user_id,
+            'job_name'=> $request->job_name
+            ];
+
+        //additional fields for job file table (output)
+        //$template_id = $request->template_id;
+        //$step_id = $request->step_id;
+        //$step_option_id= $request->step_option_id;
+        //$user_id->$request->user_id;
+        //$job_name->$request->job_name;
+        /*$file_id = $request->file_id;
+        $file_path = $request->file_path;
+        
+        $job_file = 
+            ['template_id' => $request->template_id, 
+            'step_id'=> $request->step_id,
+            'step_option_id'=> $request->step_option_id,
+            'user_id'=> $request->user_id,
+            'job_name'=> $request->job_name,
+            'file_id' => $request->file_id
+            ];
+
+        //additional fields for job file table (input)
+        //$template_id = $request->template_id;
+        //$step_id = $request->step_id;
+        //$step_option_id= $request->step_option_id;
+        //$user_id->$request->user_id;
+        //$job_name->$request->job_name;
+
+        /*$parameter_id = 
+        $value_string
+
+        $v_init = -60;
+        $tstop = 100;
+        $dt = 0.001;
+
+
+
+       if($request->id ==1)
+        {
+
+
+        $delay = $request->delay;
+        $duration = $request->duration;  
+        $amplitude = $request->amplitude;  
+
+       
+            
+           $val =1;
+            
+         
+        }
+
+        else if($request->id ==2)
+        {
+
+        $interval = $request->interval;
+        $number = $request->number;
+        $noise = $request->noise;
+        $start = $request->start;
+
+
+            $val =2;
+        }
+        
+
+       DB::beginTransaction(); 
+       try { 
+            DB::table('job')->insert($job); 
+            DB::table('job_file')->insert($job_file); 
+            //DB::table('job_parameter')->insert($predefinedAllJobCategoryAnswers); 
+            DB::commit(); 
+        } catch (Exception $e) { 
+            DB::rollback(); 
+            return Redirect::to('some_url')->with('error', $e); 
+        }
 
             //return $val;
         
         return $val;
 
         // $param->save();
-    }
-
-
+}*/
 
 }
