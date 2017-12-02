@@ -183,13 +183,12 @@ class WorkflowController extends Controller
             $val =1;
 
                 $injection = new Current_injection;
-             
-               $injection->delay= $delay;
-               $injection->duration=$duration;
-               $injection->amplitude=$amplitude;
-               $injection->save();
+                $injection->delay= $delay;
+                $injection->duration=$duration;
+                $injection->amplitude=$amplitude;
+                $injection->save();
 
-    //         DB::table('current_injection')->insert(
+    //         DB::table('current_injections')->insert(
     //     array('delay' => $delay, 'duration' => $duration, 'amplitude' => $amplitude)
     // );
 

@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'CreateCurrentInjection' => $baseDir . '/database/migrations/2017_12_02_210521_create_current_injection.php',
+    'CreateCurrentInjectionsTable' => $baseDir . '/database/migrations/2017_12_02_230004_create_current_injections_table.php',
     'CreateJobFileTable' => $baseDir . '/database/migrations/2017_12_02_181536_create_job_file_table.php',
     'CreateJobParameterTable' => $baseDir . '/database/migrations/2017_12_02_181546_create_job_parameter_table.php',
     'CreateJobTable' => $baseDir . '/database/migrations/2017_12_02_181528_create_job_table.php',

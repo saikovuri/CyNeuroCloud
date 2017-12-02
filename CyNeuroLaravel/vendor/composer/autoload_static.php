@@ -278,7 +278,7 @@ class ComposerStaticInit0a4301d462d7a185ab78e3b01589aae1
     );
 
     public static $classMap = array (
-        'CreateCurrentInjection' => __DIR__ . '/../..' . '/database/migrations/2017_12_02_210521_create_current_injection.php',
+        'CreateCurrentInjectionsTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_02_230004_create_current_injections_table.php',
         'CreateJobFileTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_02_181536_create_job_file_table.php',
         'CreateJobParameterTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_02_181546_create_job_parameter_table.php',
         'CreateJobTable' => __DIR__ . '/../..' . '/database/migrations/2017_12_02_181528_create_job_table.php',

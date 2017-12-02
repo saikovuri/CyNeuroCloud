@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Current_injection extends Model
 {
-    protected $fillable = array(
+     protected $fillable = array(
         'delay',
         'duration',
         'amplitude'
