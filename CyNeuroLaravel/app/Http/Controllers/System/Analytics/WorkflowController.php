@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use Redirect;
+use ZipArchive;
 
 class WorkflowController extends Controller
 {
@@ -173,7 +174,12 @@ class WorkflowController extends Controller
             fwrite($myfile, $txt);
             fclose($myfile);
             
-           $val =1;
+            $cur_dir = getcwd();
+            $zip = new ZipArchive();
+            $zip->open($cur_dir.'/CyNeuroSimpleWorkflowExample.zip', ZipArchive::CREATE);
+            $zip->addFile($cur_dir.'/SimpleCurrentInjection.cfg', 'CyNeuroSimpleWorkflowExample/SimpleCurrentInjection.cfg');
+            $zip->close();
+            $val =1;
             
          
         }
@@ -211,14 +217,16 @@ class WorkflowController extends Controller
             $txt = "noise = " . $noise. PHP_EOL;
             fwrite($myfile, $txt);
             fclose($myfile);
+            $cur_dir = getcwd();
+            $zip = new ZipArchive();
+            $zip->open($cur_dir.'/CyNeuroSimpleWorkflowExample.zip', ZipArchive::CREATE);
+            $zip->addFile($cur_dir.'/SimpleSynapse.cfg', 'CyNeuroSimpleWorkflowExample/SimpleSynapse.cfg');
+            $zip->close();
+
             $val =2;
         }
         
-    
-
-            //return $val;
-        
-        return $val;
+             return $val;
 
         // $param->save();
     }

@@ -48,7 +48,7 @@
 
            //$scope.tool = response.data.val;
            console.log(response.data);
-           $window.location.href = "http://" + $window.location.host + "/system/analytics/databworkflow_pageases_page#panel6";
+           $window.location.href = "http://" + $window.location.host + "/system/analytics/databworkflow_pageases_page";
           
 
         }, function error(response, status, headers, config){

@@ -15,8 +15,6 @@ system_app.controller('analytics-workflow-create', function($scope, $http) {
     }).then(function success(response, status, headers, config){
 
         $scope.tools = response.data.tool;
-        console.log($scope.tools)
-
     }, function error(response, status, headers, config){
     });
 
