@@ -5,6 +5,7 @@ namespace App\Http\Controllers\System\Analytics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use Redirect;
 
 class WorkflowController extends Controller
 {
@@ -140,6 +141,7 @@ class WorkflowController extends Controller
 
     public function store_params(Request $request)
     {
+        $val =0;
         // Validate the request...
 
         if($request->id ==1)
@@ -171,7 +173,8 @@ class WorkflowController extends Controller
             fwrite($myfile, $txt);
             fclose($myfile);
             
-           
+           $val =1;
+            
          
         }
 
@@ -208,11 +211,14 @@ class WorkflowController extends Controller
             $txt = "noise = " . $noise. PHP_EOL;
             fwrite($myfile, $txt);
             fclose($myfile);
+            $val =2;
         }
         
     
 
-            return "Success";
+            //return $val;
+        
+        return $val;
 
         // $param->save();
     }

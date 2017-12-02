@@ -38,9 +38,6 @@ system_app.controller('analytics-workflow-create', function($scope, $http) {
 
 
 
-        console.log(get_run_workflow_params);
-
-
         // dateSubmitted:"2017-11-07T15:53:47-08:00"
         // failed:"false"
         // jobHandle:"NGBW-JOB-BLUEPYOPT_TG-50BC4ACEF9054F68898F74C44D78BF9E"

@@ -56,7 +56,9 @@
                </div>
                <div class="form-group">
                   <label for="upload"><i class="fa fa-cloud-upload text-primary fa-2x" aria-hidden="true"></i> Upload data ( The maximum number of sample is 1 ):</label>
-                  <div id="upload" class="dropzone" method="post" enctype="multipart/form-data"></div>
+                  <div id="upload" class="dropzone" method="post" enctype="multipart/form-data">
+                  </div>
+
                </div>
                <div class="form-group" ng-show="show_run_button" ng-model="show_run_button">
                   <div class="text-center">
