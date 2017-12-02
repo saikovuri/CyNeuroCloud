@@ -5,6 +5,7 @@ namespace App\Http\Controllers\System\Analytics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Current_injection;
 use Redirect;
 use ZipArchive;
 
@@ -29,10 +30,6 @@ class WorkflowController extends Controller
         return view('system/analytics/workflow');
 
     }
-
-
-
-
 
 
     // API
@@ -142,6 +139,9 @@ class WorkflowController extends Controller
 
     public function store_params(Request $request)
     {
+
+        $injection = new Current_injection;
+             
         $val =0;
         // Validate the request...
 
@@ -180,8 +180,11 @@ class WorkflowController extends Controller
             $zip->addFile($cur_dir.'/SimpleCurrentInjection.cfg', 'CyNeuroSimpleWorkflowExample/SimpleCurrentInjection.cfg');
             $zip->close();
             $val =1;
-            
-         
+
+              $injection->delay= $delay;
+              $injection->duration=$duration;
+              $injection->amplitude=$amplitude;
+              $injection->save();
         }
 
         else if($request->id ==2)
@@ -228,6 +231,10 @@ class WorkflowController extends Controller
         
              return $val;
 
+
+
+
+           
         // $param->save();
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParametersTable extends Migration
+class CreateCurrentInjection extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateParametersTable extends Migration
      */
     public function up()
     {
-        Schema::create('parameters', function (Blueprint $table) {
+         Schema::create('current_injection', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('duration');
-            $table->string('amplitude');
-            $table->string('weight');
-            $table->string('interval');
-            $table->timestamps();
-        });
+            $table->string('delay');
+            $table->integer('duration');
+            $table->integer('amplitude');
+        }); 
     }
 
     /**
@@ -30,6 +28,6 @@ class CreateParametersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('parameters');
+        Schema::dropIfExists('current_injection');
     }
 }
