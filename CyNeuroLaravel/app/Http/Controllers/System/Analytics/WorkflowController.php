@@ -149,6 +149,11 @@ class WorkflowController extends Controller
         $val =0;
         // Validate the request...
 
+        //hard-coded simulation parameters
+        $v_init = '-60';
+        $tstop = '100';
+        $dt = '0.001';
+
         if($request->id ==1)
         {
 
@@ -156,14 +161,16 @@ class WorkflowController extends Controller
         $duration = $request->duration;  
         $amplitude = $request->amplitude;  
 
+
+
         $myfile = fopen("SimpleCurrentInjection.cfg", "w") or die("Unable to open file!");
             $txt = "[Simulation Parameters]". PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = "v_init = -60". PHP_EOL;
+            $txt = "v_init = " . $v_init. PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = "tstop = 100". PHP_EOL;
+            $txt = "tstop = " . $tstop. PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = "dt = 0.001". PHP_EOL;
+            $txt = "dt = " . $dt. PHP_EOL;
             fwrite($myfile, $txt);
              $txt = PHP_EOL;
             fwrite($myfile, $txt);
@@ -211,13 +218,13 @@ class WorkflowController extends Controller
 
             $txt = "[Simulation Parameters]". PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = "v_init = -60". PHP_EOL;
+            $txt = "v_init = " . $v_init. PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = "tstop = 100". PHP_EOL;
+            $txt = "tstop = " . $tstop. PHP_EOL;
             fwrite($myfile, $txt);
-            $txt = "dt = 0.001". PHP_EOL;
+            $txt = "dt = " . $dt. PHP_EOL;
             fwrite($myfile, $txt);
-             $txt = PHP_EOL;
+            $txt = PHP_EOL;
             fwrite($myfile, $txt);
 
 
@@ -291,7 +298,12 @@ class WorkflowController extends Controller
         $file_id = $query_result[0]->id;
 
         //get parameter ids
-        
+        $query_result_params = DB::table('parameter')
+        ->where([
+            ['step_option_id', '=', $step_option_id ],        
+        ])
+        ->select('parameter.id', 'parameter_name')
+        ->get();        
 
         //begin transaction
         /*****************************************/
@@ -303,7 +315,10 @@ class WorkflowController extends Controller
         //create the arrays for the inserted rows
         $job = ['step_option_id' => $step_option_id,
         'user_id'=> $user_id,
-        'job_name'=> $job_name];
+        'job_name'=> $job_name,
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s")
+        ];
 
         //test print 
         fwrite($myfile, print_r($job, true));
@@ -315,13 +330,48 @@ class WorkflowController extends Controller
         //create the arrays for the inserted rows
         $job_file = 
         ['job_id' => $job_id,
-        'file_id' => $file_id
+        'file_id' => $file_id,
+        'created_at' => date("Y-m-d H:i:s"),
+        'updated_at' => date("Y-m-d H:i:s")
         ];
+
 
         //test print 
         fwrite($myfile, print_r($job_file, true));
         //insert
         DB::table('job_file')->insert($job_file); 
+
+
+        //Job Parameters third (last)
+        /*****************************************/
+        //create the arrays for the inserted rows
+        $job_parameter = array();
+        foreach ($query_result_params as $param) {
+            //fwrite($myfile, 'FOR Loop - parameter_name: '.$param->parameter_name. PHP_EOL);
+            
+            //$param_value = $request->$parameter_name;
+            //fwrite($myfile, 'FOR Loop - $param_value: '.$param_value. PHP_EOL);
+
+            //To access directly from the $request, use the following, but we're hard-codeing the simulation parameters
+            //$parameter_name = $param->parameter_name;
+            //array_push($job_parameter, [$parameter_name, $job_id, $param->id, $request->$parameter_name]);
+
+            $parameter_name = $param->parameter_name;
+            //$$parameter_name is a variable variable for the variables created for the file write
+            array_push($job_parameter, 
+                [ 'job_id'=> $job_id, 
+                'parameter_id'=> $param->id, 
+                'value_string' => $$parameter_name,
+                'created_at' => date("Y-m-d H:i:s"),
+                'updated_at' => date("Y-m-d H:i:s")
+                ]);
+        }
+
+        //test print 
+        fwrite($myfile, print_r($job_parameter, true));
+
+        //insert
+        DB::table('job_parameter')->insert($job_parameter); 
 
 
         // known error - will throw exceptiion, so exception handling try/catch/finally is working
@@ -355,103 +405,3 @@ public function file_output(){
 
 }
 
-/*public function persist_job(Request $request) {
-        $val =0;
-        // Validate the request...
-
-        //fields for job table
-        /*$template_id = $request->template_id;
-        $step_id = $request->step_id;
-        $step_option_id= $request->step_option_id;
-        $user_id->$request->user_id;
-        $job_name->$request->job_name;
-                $job = 
-            ['template_id' => $request->template_id, 
-            'step_id'=> $request->step_id,
-            'step_option_id'=> $request->step_option_id,
-            'user_id'=> $request->user_id,
-            'job_name'=> $request->job_name
-            ];
-
-        //additional fields for job file table (output)
-        //$template_id = $request->template_id;
-        //$step_id = $request->step_id;
-        //$step_option_id= $request->step_option_id;
-        //$user_id->$request->user_id;
-        //$job_name->$request->job_name;
-        /*$file_id = $request->file_id;
-        $file_path = $request->file_path;
-        
-        $job_file = 
-            ['template_id' => $request->template_id, 
-            'step_id'=> $request->step_id,
-            'step_option_id'=> $request->step_option_id,
-            'user_id'=> $request->user_id,
-            'job_name'=> $request->job_name,
-            'file_id' => $request->file_id
-            ];
-
-        //additional fields for job file table (input)
-        //$template_id = $request->template_id;
-        //$step_id = $request->step_id;
-        //$step_option_id= $request->step_option_id;
-        //$user_id->$request->user_id;
-        //$job_name->$request->job_name;
-
-
-        /*$parameter_id = 
-        $value_string
-
-        $v_init = -60;
-        $tstop = 100;
-        $dt = 0.001;
-
-
-
-       if($request->id ==1)
-        {
-
-
-        $delay = $request->delay;
-        $duration = $request->duration;  
-        $amplitude = $request->amplitude;  
-
-       
-            
-           $val =1;
-            
-         
-        }
-
-        else if($request->id ==2)
-        {
-
-        $interval = $request->interval;
-        $number = $request->number;
-        $noise = $request->noise;
-        $start = $request->start;
-
-
-            $val =2;
-        }
-        
-
-       DB::beginTransaction(); 
-       try { 
-            DB::table('job')->insert($job); 
-            DB::table('job_file')->insert($job_file); 
-            //DB::table('job_parameter')->insert($predefinedAllJobCategoryAnswers); 
-            DB::commit(); 
-        } catch (Exception $e) { 
-            DB::rollback(); 
-            return Redirect::to('some_url')->with('error', $e); 
-        }
-
-            //return $val;
-        
-        return $val;
-
-        // $param->save();
-}*/
-
-}
