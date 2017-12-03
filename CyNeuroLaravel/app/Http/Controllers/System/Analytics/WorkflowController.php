@@ -242,82 +242,95 @@ class WorkflowController extends Controller
         }
         
         //persist in database
-        //Set up field values for job and job_file
-        //waiting to do parameters until this is working
-        $template_id = 'neuron_cel';
-        $step_id = 1;
-        $user_id = 'test';
-        $job_name = 'test_name';
-        if($request->id ==1) {
-            $step_option_id = 0;
-            $file_id = 'SimpleCurrentInjection.cfg';
-        }
-
-        else if($request->id ==2) {
-            $step_option_id = 1;
-            $file_id = 'SimpleSynapse.cfg';
-        }
-
-        //create the arrays for the inserted rows
-        $job = ['template_id' => $template_id,
-        'step_id'=> $step_id,
-        'step_option_id'=> $step_option_id,
-        'user_id'=> $user_id,
-        'job_name'=> $job_name];
-
-        $job_file = 
-        ['template_id' => $template_id,
-        'step_id'=> $step_id,
-        'step_option_id'=> $step_option_id,
-        'user_id'=> $user_id,
-        'job_name'=> $job_name,
-        'file_id' => $file_id
-        ];
-
-
-        // Postponing transactions until one table is working
-        // going with job_file for the first one because of the timestamp column in job
+        /*****************************************/
+        
         // create a file for debugging - DBerror
-       //DB::beginTransaction(); 
-
-/*
-        $flight = new Flight;
-
-        $flight->name = $request->name;
-
-        $flight->save();
-*/
-
        $myfile = fopen("DBerror.txt", "w") or die("Unable to open file!");
        try { 
         fwrite($myfile, 'Testing_BEFORE_INSERT'. PHP_EOL);
+
+        //Set up field values 
+        /*****************************************/        
+        $usecase_name = 'NEURON Single Cell';
+        $step_name = 'modeling';
+        $user_id = 1;
+        $job_name = 'test_name';
+        if($request->id ==1) {
+            $step_option_name = 'current injection';
+            $file_name = 'SimpleCurrentInjection.cfg';
+        }
+
+       else if($request->id ==2) {
+            $step_option_name = 'synapse';
+            $file_name = 'SimpleSynapse.cfg';
+        }
+
+        //get step option id
+        $query_result = DB::table('template')
+        ->join('step', 'template.id', '=', 'step.template_id')
+        ->join('step_option', 'step.id', '=', 'step_option.step_id')
+        ->where([
+            ['usecase_name', '=', $usecase_name ],
+            ['step_name', '=', $step_name ],
+            ['step_option_name', '=', $step_option_name ],
+        ])
+        ->select('step_option.id')
+        ->get();
+
+        $step_option_id = $query_result[0]->id;
+
+        //get file id
+        $query_result = DB::table('file')
+        ->where([
+            ['step_option_id', '=', $step_option_id ],
+            ['file_name', '=', $file_name ],
+        ])
+        ->select('file.id')
+        ->get();
+
+        $file_id = $query_result[0]->id;
+
+        //get parameter ids
+        
+
+        //begin transaction
+        /*****************************************/
+
+        DB::beginTransaction(); 
+
+        //Job first
+        /*****************************************/
+        //create the arrays for the inserted rows
+        $job = ['step_option_id' => $step_option_id,
+        'user_id'=> $user_id,
+        'job_name'=> $job_name];
+
+        //test print 
+        fwrite($myfile, print_r($job, true));
+        //insert and get the job_id for the other tables
+        $job_id = DB::table('job')->insertGetId($job); 
+
+        //Job File Second
+        /*****************************************/
+        //create the arrays for the inserted rows
+        $job_file = 
+        ['job_id' => $job_id,
+        'file_id' => $file_id
+        ];
+
+        //test print 
         fwrite($myfile, print_r($job_file, true));
+        //insert
+        DB::table('job_file')->insert($job_file); 
 
-        // Here's where we try to insert
-       // DB::table('job')->insert($job); 
-        //DB::table('job_file')->insert($job_file); 
-        $job_file = new job_file;
-        fwrite($myfile, 'Testing_NORMAL_FLOW_CONTINUES'. PHP_EOL);
-        $job_file->template_id = $template_id;
-        $job_file->step_id = $step_id;
-        $job_file->step_option_id= $step_option_id;
-        $job_file->user_id = $user_id;
-        $job_file->job_name = $ob_name;
-        $job_file->file_id = $file_id;
-
-        $job_file->save();
-
-
-        // Does insert work? No.
-        //$test_job_file = DB::table('job_file')->where('template_id', 'neuron_cel')->value('template_id');
-        //fwrite($myfile, $test_job_file);
 
         // known error - will throw exceptiion, so exception handling try/catch/finally is working
         //$x = 1/0;
 
         fwrite($myfile, 'Testing_NORMAL_FLOW_CONTINUES'. PHP_EOL);
 
-        //DB::commit(); 
+        //commit transaction
+        DB::commit(); 
         } 
         catch(Exception $ex) { 
 
@@ -326,7 +339,8 @@ class WorkflowController extends Controller
             
             fwrite($myfile, $ex->getMessage(). PHP_EOL);
             
-            //DB::rollback(); 
+            //rollback transaction
+            DB::rollback(); 
         }  
         finally {
             fwrite($myfile, 'Testing_FINALLY'. PHP_EOL);
