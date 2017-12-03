@@ -14,13 +14,14 @@ class CreateJobFileTable extends Migration
     public function up()
     {
         Schema::create('job_file', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('template_id');
             $table->integer('step_id');
             $table->integer('step_option_id');
             $table->string('user_id');
             $table->string('job_name');
             $table->string('file_name');
-        });  
+            $table->timestamps('');        });  
     }
 
     /**
