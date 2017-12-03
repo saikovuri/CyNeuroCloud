@@ -65,7 +65,7 @@
                </div>
                <div class="col-md-2">
                </div>
-               @include('system.layouts.externalDiv')
+               @include('system.analytics.layouts.externalDiv')
             </div>
             <div class="col-md-4">
             </div>

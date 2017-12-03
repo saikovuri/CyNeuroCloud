@@ -5,9 +5,12 @@ namespace App\Http\Controllers\System\Analytics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
-use App\Models\Model;
-use Exception;
+use App\Current_injection;
+
 use Redirect;
+use ZipArchive;
+use DB;
+use Exception;
 
 class WorkflowController extends Controller
 {
@@ -176,9 +179,24 @@ class WorkflowController extends Controller
             fwrite($myfile, $txt);
             fclose($myfile);
             
-           $val =1;
-            
-         
+            $cur_dir = getcwd();
+            $zip = new ZipArchive();
+            $zip->open($cur_dir.'/CyNeuroSimpleWorkflowExample.zip', ZipArchive::CREATE);
+            $zip->addFile($cur_dir.'/SimpleCurrentInjection.cfg', 'CyNeuroSimpleWorkflowExample/SimpleCurrentInjection.cfg');
+            $zip->close();
+            $val =1;
+
+                $injection = new Current_injection;
+                $injection->delay= $delay;
+                $injection->duration=$duration;
+                $injection->amplitude=$amplitude;
+                $injection->save();
+
+    //         DB::table('current_injections')->insert(
+    //     array('delay' => $delay, 'duration' => $duration, 'amplitude' => $amplitude)
+    // );
+
+
         }
 
         else if($request->id ==2)
@@ -214,10 +232,16 @@ class WorkflowController extends Controller
             $txt = "noise = " . $noise. PHP_EOL;
             fwrite($myfile, $txt);
             fclose($myfile);
+            $cur_dir = getcwd();
+            $zip = new ZipArchive();
+            $zip->open($cur_dir.'/CyNeuroSimpleWorkflowExample.zip', ZipArchive::CREATE);
+            $zip->addFile($cur_dir.'/SimpleSynapse.cfg', 'CyNeuroSimpleWorkflowExample/SimpleSynapse.cfg');
+            $zip->close();
+
             $val =2;
         }
         
-          //persist in database
+        //persist in database
         //Set up field values for job and job_file
         //waiting to do parameters until this is working
         $template_id = 'neuron_cel';
@@ -359,6 +383,7 @@ public function file_output(){
         //$step_option_id= $request->step_option_id;
         //$user_id->$request->user_id;
         //$job_name->$request->job_name;
+
 
         /*$parameter_id = 
         $value_string

@@ -50,3 +50,4 @@ Route::get('/system/about/related_projects', 'System\About\RelatedProjectControl
 // Upload API
 Route::post('/system/UploadAPI/uploadWorkflowInput', 'System\UploadAPI\UploadController@uploadWorkflowInput')->name('system.UploadAPI.uploadWorkflowInput');
 
+

@@ -23,20 +23,20 @@
    <div class="tab-pane fade in show active" id="panel5" role="tabpanel" ng-controller="neuron-workflow-show" >
 
 
-        @include('system.layouts.firstPage')
-        @include('system.layouts.networkView2')
-        @include('system.layouts.networkView3')
-        @include('system.layouts.networkView4')
-        @include('system.layouts.networkView5')
-        @include('system.layouts.networkView6')
+        @include('system.analytics.layouts.firstPage')
+        @include('system.analytics.layouts.networkView2')
+        @include('system.analytics.layouts.networkView3')
+        @include('system.analytics.layouts.networkView4')
+        @include('system.analytics.layouts.networkView5')
+        @include('system.analytics.layouts.networkView6')
        
 
         <form name="singleNeuron" >
-        @include('system.layouts.singleView1')
-        @include('system.layouts.singleView2')
-        @include('system.layouts.singleView3')
+        @include('system.analytics.layouts.singleView1')
+        @include('system.analytics.layouts.singleView2')
+        @include('system.analytics.layouts.singleView3')
 
-        @include('system.layouts.singleView4')
+        @include('system.analytics.layouts.singleView4')
     </form>
 
 
