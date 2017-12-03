@@ -15,14 +15,10 @@ class CreateJobParameterTable extends Migration
     {
         Schema::create('job_parameter', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('template_id');
-            $table->integer('step_id');
-            $table->integer('step_option_id');
-            $table->string('user_id');
-            $table->string('job_name');
-            $table->string('parameter_id');
+            $table->integer('job_id');
+            $table->integer('file_id');
             $table->string('value_string');
-            $table->timestamps('');
+            $table->timestamps();
         });  
     }
 
