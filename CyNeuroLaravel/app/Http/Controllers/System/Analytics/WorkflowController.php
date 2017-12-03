@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Current_injection;
+
 use Redirect;
 use ZipArchive;
 use DB;
@@ -32,6 +33,10 @@ class WorkflowController extends Controller
         return view('system/analytics/workflow');
 
     }
+
+
+
+
 
 
     // API
@@ -141,13 +146,12 @@ class WorkflowController extends Controller
 
     public function store_params(Request $request)
     {
-
-        
         $val =0;
         // Validate the request...
 
         if($request->id ==1)
         {
+
         $delay = $request->delay;
         $duration = $request->duration;  
         $amplitude = $request->amplitude;  
@@ -237,15 +241,217 @@ class WorkflowController extends Controller
             $val =2;
         }
         
-             return $val;
+        //persist in database
+        /*****************************************/
+        
+        // create a file for debugging - DBerror
+       $myfile = fopen("DBerror.txt", "w") or die("Unable to open file!");
+       try { 
+        fwrite($myfile, 'Testing_BEFORE_INSERT'. PHP_EOL);
+
+        //Set up field values 
+        /*****************************************/        
+        $usecase_name = 'NEURON Single Cell';
+        $step_name = 'modeling';
+        $user_id = 1;
+        $job_name = 'test_name';
+        if($request->id ==1) {
+            $step_option_name = 'current injection';
+            $file_name = 'SimpleCurrentInjection.cfg';
+        }
+
+       else if($request->id ==2) {
+            $step_option_name = 'synapse';
+            $file_name = 'SimpleSynapse.cfg';
+        }
+
+        //get step option id
+        $query_result = DB::table('template')
+        ->join('step', 'template.id', '=', 'step.template_id')
+        ->join('step_option', 'step.id', '=', 'step_option.step_id')
+        ->where([
+            ['usecase_name', '=', $usecase_name ],
+            ['step_name', '=', $step_name ],
+            ['step_option_name', '=', $step_option_name ],
+        ])
+        ->select('step_option.id')
+        ->get();
+
+        $step_option_id = $query_result[0]->id;
+
+        //get file id
+        $query_result = DB::table('file')
+        ->where([
+            ['step_option_id', '=', $step_option_id ],
+            ['file_name', '=', $file_name ],
+        ])
+        ->select('file.id')
+        ->get();
+
+        $file_id = $query_result[0]->id;
+
+        //get parameter ids
+        
+
+        //begin transaction
+        /*****************************************/
+
+        DB::beginTransaction(); 
+
+        //Job first
+        /*****************************************/
+        //create the arrays for the inserted rows
+        $job = ['step_option_id' => $step_option_id,
+        'user_id'=> $user_id,
+        'job_name'=> $job_name];
+
+        //test print 
+        fwrite($myfile, print_r($job, true));
+        //insert and get the job_id for the other tables
+        $job_id = DB::table('job')->insertGetId($job); 
+
+        //Job File Second
+        /*****************************************/
+        //create the arrays for the inserted rows
+        $job_file = 
+        ['job_id' => $job_id,
+        'file_id' => $file_id
+        ];
+
+        //test print 
+        fwrite($myfile, print_r($job_file, true));
+        //insert
+        DB::table('job_file')->insert($job_file); 
 
 
+        // known error - will throw exceptiion, so exception handling try/catch/finally is working
+        //$x = 1/0;
 
+        fwrite($myfile, 'Testing_NORMAL_FLOW_CONTINUES'. PHP_EOL);
 
-           
-        // $param->save();
+        //commit transaction
+        DB::commit(); 
+        } 
+        catch(Exception $ex) { 
+
+            
+            fwrite($myfile, 'Testing_CATCH'. PHP_EOL);
+            
+            fwrite($myfile, $ex->getMessage(). PHP_EOL);
+            
+            //rollback transaction
+            DB::rollback(); 
+        }  
+        finally {
+            fwrite($myfile, 'Testing_FINALLY'. PHP_EOL);
+            fclose($myfile);
+
+            //return $val;
+            return $val;
+        }
     }
 
+public function file_output(){
 
+}
+
+/*public function persist_job(Request $request) {
+        $val =0;
+        // Validate the request...
+
+        //fields for job table
+        /*$template_id = $request->template_id;
+        $step_id = $request->step_id;
+        $step_option_id= $request->step_option_id;
+        $user_id->$request->user_id;
+        $job_name->$request->job_name;
+                $job = 
+            ['template_id' => $request->template_id, 
+            'step_id'=> $request->step_id,
+            'step_option_id'=> $request->step_option_id,
+            'user_id'=> $request->user_id,
+            'job_name'=> $request->job_name
+            ];
+
+        //additional fields for job file table (output)
+        //$template_id = $request->template_id;
+        //$step_id = $request->step_id;
+        //$step_option_id= $request->step_option_id;
+        //$user_id->$request->user_id;
+        //$job_name->$request->job_name;
+        /*$file_id = $request->file_id;
+        $file_path = $request->file_path;
+        
+        $job_file = 
+            ['template_id' => $request->template_id, 
+            'step_id'=> $request->step_id,
+            'step_option_id'=> $request->step_option_id,
+            'user_id'=> $request->user_id,
+            'job_name'=> $request->job_name,
+            'file_id' => $request->file_id
+            ];
+
+        //additional fields for job file table (input)
+        //$template_id = $request->template_id;
+        //$step_id = $request->step_id;
+        //$step_option_id= $request->step_option_id;
+        //$user_id->$request->user_id;
+        //$job_name->$request->job_name;
+
+
+        /*$parameter_id = 
+        $value_string
+
+        $v_init = -60;
+        $tstop = 100;
+        $dt = 0.001;
+
+
+
+       if($request->id ==1)
+        {
+
+
+        $delay = $request->delay;
+        $duration = $request->duration;  
+        $amplitude = $request->amplitude;  
+
+       
+            
+           $val =1;
+            
+         
+        }
+
+        else if($request->id ==2)
+        {
+
+        $interval = $request->interval;
+        $number = $request->number;
+        $noise = $request->noise;
+        $start = $request->start;
+
+
+            $val =2;
+        }
+        
+
+       DB::beginTransaction(); 
+       try { 
+            DB::table('job')->insert($job); 
+            DB::table('job_file')->insert($job_file); 
+            //DB::table('job_parameter')->insert($predefinedAllJobCategoryAnswers); 
+            DB::commit(); 
+        } catch (Exception $e) { 
+            DB::rollback(); 
+            return Redirect::to('some_url')->with('error', $e); 
+        }
+
+            //return $val;
+        
+        return $val;
+
+        // $param->save();
+}*/
 
 }
