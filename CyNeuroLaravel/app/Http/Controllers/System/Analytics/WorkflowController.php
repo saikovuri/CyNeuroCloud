@@ -5,6 +5,7 @@ namespace App\Http\Controllers\System\Analytics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
+use App\Models\Model;
 use Exception;
 use Redirect;
 
@@ -254,6 +255,15 @@ class WorkflowController extends Controller
         // going with job_file for the first one because of the timestamp column in job
         // create a file for debugging - DBerror
        //DB::beginTransaction(); 
+
+/*
+        $flight = new Flight;
+
+        $flight->name = $request->name;
+
+        $flight->save();
+*/
+
        $myfile = fopen("DBerror.txt", "w") or die("Unable to open file!");
        try { 
         fwrite($myfile, 'Testing_BEFORE_INSERT'. PHP_EOL);
@@ -261,7 +271,18 @@ class WorkflowController extends Controller
 
         // Here's where we try to insert
        // DB::table('job')->insert($job); 
-        DB::table('job_file')->insert($job_file); 
+        //DB::table('job_file')->insert($job_file); 
+        $job_file = new job_file;
+        fwrite($myfile, 'Testing_NORMAL_FLOW_CONTINUES'. PHP_EOL);
+        $job_file->template_id = $template_id;
+        $job_file->step_id = $step_id;
+        $job_file->step_option_id= $step_option_id;
+        $job_file->user_id = $user_id;
+        $job_file->job_name = $ob_name;
+        $job_file->file_id = $file_id;
+
+        $job_file->save();
+
 
         // Does insert work? No.
         //$test_job_file = DB::table('job_file')->where('template_id', 'neuron_cel')->value('template_id');
