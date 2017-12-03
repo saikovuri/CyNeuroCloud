@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJobFileTable extends Migration
+class CreateFileTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateJobFileTable extends Migration
      */
     public function up()
     {
-        Schema::create('job_file', function (Blueprint $table) {
+         Schema::create('file', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('job_id');
-            $table->integer('file_id');
+            $table->integer('step_option_id'); 
+            $table->enum('input_output', ['input', 'output']);
+            //$table->set('file_type', ['txt','csv','xls','cfg']);      
+            $table->string('file_name');
             $table->timestamps();
-        });  
+        });
     }
 
     /**
@@ -28,6 +30,6 @@ class CreateJobFileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('job_file');
+        Schema::dropIfExists('file');
     }
 }

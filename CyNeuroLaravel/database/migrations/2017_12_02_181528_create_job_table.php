@@ -14,12 +14,11 @@ class CreateJobTable extends Migration
     public function up()
     {
          Schema::create('job', function (Blueprint $table) {
-            $table->string('template_id');
-            $table->integer('step_id');
+            $table->increments('id');
             $table->integer('step_option_id');
-            $table->string('user_id');
+            $table->integer('user_id');
             $table->string('job_name');
-            $table->timestamp('time_created');
+            $table->timestamps();
         });
     }
 
