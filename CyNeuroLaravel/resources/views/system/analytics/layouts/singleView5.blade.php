@@ -1,45 +1,42 @@
-<div id="singlePage5" ng-show="singlePage5">
+   <div id="singlePage5" ng-show="singlePage5">
 
- <h4>Create Workflow</h4>
-         <div class="row">
-            <div class="col-md-12">
-               <div class="form-group">
-                  <label for="tools"><i class="fa fa-wrench text-primary fa-2x" aria-hidden="true"></i> Choose a tool:</label>
-                  <select id="tools" class="form-control" ng-model="selected_tool" ng-change=" " ng-options="obj.toolId as obj.toolName for obj in tools ">
-                     <option value="">-- Please select a tool --</option>
-                  </select>
-               </div>
-               <div class="form-group">
-                  <label for="upload"><i class="fa fa-cloud-upload text-primary fa-2x" aria-hidden="true"></i> Upload data ( The maximum number of sample is 1 ):</label>
-                  <div id="upload" class="dropzone" method="post" enctype="multipart/form-data">
-                  </div>
+     <h3 align="margin-left" style="margin-top: 25px">Run Single Neuron Workflow Job</h3>
 
-               </div>
-               <div class="form-group" ng-show="show_run_button" ng-model="show_run_button">
-                  <div class="text-center">
-                     <button id="button6" type="button" class="btn btn-warning" ng-click="run_function()">Run</button>
-                  </div>
-               </div>
-               <div class="form-group text-center" ng-show="show_alert" ng-model="show_alert">
-                  <div class="alert alert-danger" role="alert">
-                     <strong>Please choose a tool and upload a data.</strong>
-                  </div>
-               </div>
-               <div class="form-group text-center" ng-show="show_run" ng-model="show_run">
-                  <div class="alert alert-success" role="alert">
-                     <p id="show_run_result">
-                        Your task has been submitted.
-                        <br>
-                        Submit time: @{{ submit_time }}.
-                        <br>
-                        Job ID: <strong>@{{ jobID }}</strong>
-                        <br>
-                        Plase remember this Job ID for monitoring the status.
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
+     <div class="row">
+      <div class="col-md-12">
+
+      </br>
+   </br> 
+
+   <div class="form-group" style="width: 400px; margin: 0 auto;" >
+    <a style="color:black" href="{{ asset('CyNeuroSimpleWorkflowExample.zip') }}"><i class="fa fa-download"></i> &nbspDownload CyNeuro Simple workflow file</a>
+   </div>
+
+   <div class="form-actions" ng-show="show_run_button" ng-model="show_run_button" id="button3" style="margin-top: 100px">
+
+      <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-left" value="Back" >
+      <input  type="Submit" ng-click="run_function()" class="btn btn-primary pull-right" value="Run" >
+   </div>
 
 
-</div>
+   <div class="form-group text-center" ng-show="show_run" ng-model="show_run" style="margin-top: 30px;margin-left:250px; width: 1200px;">
+      <div class="alert alert-success" role="alert">
+         <p id="show_run_result">
+            Your task has been submitted.
+            <br>
+            Submit time: @{{ submit_time }}.
+            <br>
+            Job ID: <strong>@{{ jobID }}</strong>
+            <br>
+            Plase remember this Job ID for monitoring the status.
+         </p>
+      </div>
+
+      <input style="margin-left: 200px; " type="Submit" ng-click="singlechangeView('firstPage')" class="btn btn-primary pull-left" value="Submit Another Job" >
+
+   </div>
+   </div>
+   </div>
+
+
+   </div>

@@ -1,0 +1,4 @@
+Testing_BEFORE_INSERT
+Testing_CATCH
+Undefined offset: 0
+Testing_FINALLY
