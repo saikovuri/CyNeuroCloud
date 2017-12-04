@@ -35,8 +35,8 @@
         @include('system.analytics.layouts.singleView1')
         @include('system.analytics.layouts.singleView2')
         @include('system.analytics.layouts.singleView3')
-
         @include('system.analytics.layouts.singleView4')
+        @include('system.analytics.layouts.singleView5')
     </form>
 
 

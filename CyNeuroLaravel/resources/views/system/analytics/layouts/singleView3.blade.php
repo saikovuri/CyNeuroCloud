@@ -1,6 +1,6 @@
 <div class="row" id="singlePage3" ng-show="singlePage3">
    <div class="container">
-      <h2 align="margin-left"> Neuron Workflow Requirements</h2>
+      <h3 style="margin-top: 25px" align="margin-left"> Neuron Workflow Requirements</h3>
       <div class="row">
         
       </div>
