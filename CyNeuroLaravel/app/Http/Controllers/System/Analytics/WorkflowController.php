@@ -54,27 +54,27 @@ class WorkflowController extends Controller
     }
 
 
-    // public function api_workflow_run_workflow(Request $request) {
+    public function api_workflow_run_workflow(Request $request) {
 
-    //     $tool = $request->tool;
-    //     $file_list_str = $request->file_list_str;    
-    //     if(Storage::disk('workflow_upload_disk')->exists($file_list_str)) {
+        $tool = $request->tool;
+        $file_list_str = $request->file_list_str;    
+        if(Storage::disk('workflow_upload_disk')->exists($file_list_str)) {
 
-    //         $file_path = Storage::disk('workflow_upload_disk')->getDriver()->getAdapter()->getPathPrefix();
-    //         $file_full_dir = $file_path . $file_list_str;
-    //         $cmd = "curl -u yuanxunzhang:$this->backend_password -H cipres-appkey:$this->backend_key $this->backend_url/job/yuanxunzhang -F tool=$tool  -F input.infile_=@$file_full_dir -F metadata.statusEmail=true";
+            $file_path = Storage::disk('workflow_upload_disk')->getDriver()->getAdapter()->getPathPrefix();
+            $file_full_dir = $file_path . $file_list_str;
+            $cmd = "curl -u yuanxunzhang:$this->backend_password -H cipres-appkey:$this->backend_key $this->backend_url/job/yuanxunzhang -F tool=$tool  -F input.infile_=@$file_full_dir -F metadata.statusEmail=true";
 
-    //         exec($cmd, $xml_output_arr);
-    //         $xml_str = implode(" ", $xml_output_arr);
-    //         $xml = simplexml_load_string($xml_str);
-    //         $json = json_encode($xml);
-    //         return $json;
+            exec($cmd, $xml_output_arr);
+            $xml_str = implode(" ", $xml_output_arr);
+            $xml = simplexml_load_string($xml_str);
+            $json = json_encode($xml);
+            return $json;
 
-    //     }
+        }
 
 
 
-    // }
+    }
 
 
     public function api_workflow_job_submit(Request $request) {
