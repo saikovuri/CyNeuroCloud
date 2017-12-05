@@ -330,6 +330,8 @@ class WorkflowController extends Controller
         /*****************************************/
 
         DB::beginTransaction(); 
+        fwrite($myfile, 'Testing_InsideTransaction'. PHP_EOL);
+        fwrite($myfile, 'job_id '.$job_id. PHP_EOL);
 
         //Job first
         /*****************************************/
