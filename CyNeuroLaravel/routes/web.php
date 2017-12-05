@@ -37,6 +37,8 @@ Route::get('/system/analytics/api_workflow_get_backend_data_to_server', 'System\
 
 Route::get('/system/analytics/store_params', 'System\Analytics\WorkflowController@store_params')->name('system.analytics.store_params');
 
+Route::get('/system/analytics/api_workflow_job_submit', 'System\Analytics\WorkflowController@api_workflow_job_submit')->name('system.analytics.api_workflow_job_submit');
+
 // Event
 Route::get('/system/event/bigdata_syposium_page', 'System\Event\EventController@BigDataSymposiumPage')->name('system.event.bigdata_syposium_page');
 Route::get('/system/event/bigdata_syposium_register_submit', 'System\Event\EventController@BigDataSymposiumRegisterSubmit')->name('system.event.bigdata_syposium_register_submit');

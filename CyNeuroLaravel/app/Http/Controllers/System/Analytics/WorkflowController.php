@@ -77,16 +77,12 @@ class WorkflowController extends Controller
     // }
 
 
-
-
-    public function api_workflow_run_workflow(Request $request) {
+    public function api_workflow_job_submit(Request $request) {
 
         $tool = $request->tool;
          $cur_dir = getcwd();
-       // $file_list_str = $request->file_list_str;
-                
+       
             $file_full_dir = $cur_dir.'/CyNeuroSimpleWorkflowExample.zip';
-
             $cmd = "curl -u yuanxunzhang:$this->backend_password -H cipres-appkey:$this->backend_key $this->backend_url/job/yuanxunzhang -F tool=$tool  -F input.infile_=@$file_full_dir -F metadata.statusEmail=true";
 
             exec($cmd, $xml_output_arr);
