@@ -7,7 +7,7 @@
 
     $scope.run_func = function() {
 
-
+          var jobName = document.getElementById("jobName").value;
       if ($("input:radio[name=inj_mod]:checked").val() == 1) {
         var delay = document.getElementById("delay").value;
         var duration = document.getElementById("duration").value;
@@ -16,7 +16,8 @@
           id :1,  
           delay : delay,
           duration : duration,
-          amplitude : amplitude
+          amplitude : amplitude,
+          jobname: jobName
 
         };
 
@@ -31,7 +32,8 @@
           interval : interval,
           number : number,
           noise : noise,
-          start : start
+          start : start,
+          jobname: jobName
 
 
         };
@@ -246,7 +248,7 @@
 
             if(response.data != '') {
               
-                console.log("Hello");
+                console.log(response.data);
                 $scope.submit_time = response.data.dateSubmitted
                 $scope.jobID = response.data.jobHandle
                 $scope.show_run = true;

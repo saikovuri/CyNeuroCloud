@@ -83,16 +83,14 @@ class WorkflowController extends Controller
          $cur_dir = getcwd();
        
             $file_full_dir = $cur_dir.'/CyNeuroSimpleWorkflowExample.zip';
-            $cmd = "curl -u yuanxunzhang:$this->backend_password -H cipres-appkey:$this->backend_key $this->backend_url/job/yuanxunzhang -F tool=$tool  -F input.infile_=@$file_full_dir -F metadata.statusEmail=true";
+            $cmd = "curl -u yuanxunzhang:$this->backend_password -H cipres-appkey:$this->backend_key $this->backend_url/job/yuanxunzhang -F tool=NEURON74_TG  -F input.infile_=@$file_full_dir -F metadata.statusEmail=true";
 
             exec($cmd, $xml_output_arr);
             $xml_str = implode(" ", $xml_output_arr);
             $xml = simplexml_load_string($xml_str);
             $json = json_encode($xml);
             return $json;
-
-    
-    }
+}
 
 
 
@@ -177,7 +175,7 @@ class WorkflowController extends Controller
         $delay = $request->delay;
         $duration = $request->duration;  
         $amplitude = $request->amplitude;  
-
+        $job_name = $request->jobname;
 
 
         $myfile = fopen("SimpleCurrentInjection.cfg", "w") or die("Unable to open file!");
@@ -278,7 +276,6 @@ class WorkflowController extends Controller
         $usecase_name = 'NEURON Single Cell';
         $step_name = 'modeling';
         $user_id = 1;
-        $job_name = 'test_name';
         if($request->id ==1) {
             $step_option_name = 'current injection';
             $file_name = 'SimpleCurrentInjection.cfg';
