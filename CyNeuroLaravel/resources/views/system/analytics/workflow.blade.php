@@ -170,7 +170,7 @@
    var php_upload_input_url = '{{ route('system.UploadAPI.uploadWorkflowInput') }}';
 
    var php_upload_input_test = '{{ route('system.analytics.store_params') }}';
-
+   var php_get_job_submit_url = '{{ route('system.analytics.api_workflow_job_submit') }}';
     
      
 </script>
