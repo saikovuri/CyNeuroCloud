@@ -15,7 +15,7 @@
    <div class="form-actions" ng-show="show_run_button" ng-model="show_run_button" id="button3" style="margin-top: 100px">
 
       <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-left" value="Back" >
-      <input  type="Submit" ng-click="run_function()" class="btn btn-primary pull-right" value="Run" >
+      <input  type="Submit" ng-click="func_run()" class="btn btn-primary pull-right" value="Run" >
    </div>
 
 
@@ -32,7 +32,7 @@
          </p>
       </div>
 
-      <input style="margin-left: 200px; " type="Submit" ng-click="singlechangeView('firstPage')" class="btn btn-primary pull-left" value="Submit Another Job" >
+      <input style="margin-left: 200px; " type="Submit" onClick="history.go(0)"  class="btn btn-primary pull-left" value="Submit Another Job" >
 
    </div>
    </div>

@@ -200,7 +200,7 @@
     }
 
 
-$scope.show_run_button = true;
+  $scope.show_run_button = true;
 
     // Get tools list
     $scope.tools = {};
@@ -209,7 +209,7 @@ $scope.show_run_button = true;
 
     $http({
         method:'get',
-        url:php_get_tools_list_url,
+        url:php_get_job_submit_url,
         params:get_tools_list_params
     }).then(function success(response, status, headers, config){
 
@@ -217,9 +217,9 @@ $scope.show_run_button = true;
     }, function error(response, status, headers, config){
     });
 
-    $scope.run_function = function() {
+    $scope.func_run = function() {
 
-        file_list_str = input_file_list.join()
+        file_list_str = input_file_list.join();
         // if( file_list_str == "" || $scope.selected_tool === undefined || !$scope.selected_tool) {
         //     $scope.show_alert = true;
         // }
@@ -232,8 +232,7 @@ $scope.show_run_button = true;
             tool : $scope.selected_tool
         };
 
-
-
+       
         // dateSubmitted:"2017-11-07T15:53:47-08:00"
         // failed:"false"
         // jobHandle:"NGBW-JOB-BLUEPYOPT_TG-50BC4ACEF9054F68898F74C44D78BF9E"
@@ -241,13 +240,13 @@ $scope.show_run_button = true;
 
         $http({
             method:'get',
-            url:php_get_run_workflow_url,
+            url:php_get_job_submit_url,
             params:get_run_workflow_params
         }).then(function success(response, status, headers, config){
 
             if(response.data != '') {
               
-
+                console.log("Hello");
                 $scope.submit_time = response.data.dateSubmitted
                 $scope.jobID = response.data.jobHandle
                 $scope.show_run = true;
