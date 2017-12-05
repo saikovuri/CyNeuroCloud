@@ -50,4 +50,7 @@ Route::get('/system/about/related_projects', 'System\About\RelatedProjectControl
 // Upload API
 Route::post('/system/UploadAPI/uploadWorkflowInput', 'System\UploadAPI\UploadController@uploadWorkflowInput')->name('system.UploadAPI.uploadWorkflowInput');
 
+// ChatBot Route get method to submit user input and get bot response
+Route::get('/chatbot', 'ChatBot@getResponse');
+
 
