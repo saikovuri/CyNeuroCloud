@@ -1,4 +1,4 @@
 Testing_BEFORE_INSERT
 Testing_CATCH
-Undefined offset: 0
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cyneuro.template' doesn't exist (SQL: select `step_option`.`id` from `template` inner join `step` on `template`.`id` = `step`.`template_id` inner join `step_option` on `step`.`id` = `step_option`.`step_id` where (`usecase_name` = NEURON Single Cell and `step_name` = modeling and `step_option_name` = current injection))
 Testing_FINALLY
