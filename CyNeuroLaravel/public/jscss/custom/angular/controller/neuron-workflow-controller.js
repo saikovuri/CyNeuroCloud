@@ -1,5 +1,67 @@
   system_app.controller('neuron-workflow-show', function($scope, $http, $window) {
 
+
+     $scope.pull_jobs = function() {
+
+          
+      var get_params = {
+          user_id :1
+
+        };
+
+
+      $http({
+        method:'get',
+        url:php_workflow_get_job_list,
+        params:get_params
+
+      }).then(function success(response, status, headers, config){
+
+
+            $scope.jobs = response.data
+            $scope.firstPage = false;
+            $scope.singlePage6 = true;
+
+        }, function error(response, status, headers, config){
+
+        });
+
+
+    };
+
+
+     $scope.select_job_parameters = function(job_id) {
+
+            console.log(job_id);
+      var get_params = {
+          job_id :job_id
+        };
+
+
+      $http({
+        method:'get',
+        url:php_workflow_get_job_parameters,
+        params:get_params
+
+      }).then(function success(response, status, headers, config){
+
+
+             $scope.jobs = response.data;
+            console.log(response.data);
+            $scope.singlePage6 = false;
+            $scope.singlePage1 = true;
+        }, function error(response, status, headers, config){
+
+        });
+
+
+    };
+
+
+
+
+
+
     $scope.run_func = function() {
 
           var jobName = document.getElementById("jobName").value;
@@ -18,6 +80,7 @@
 
       }  
       else if ($("input:radio[name=inj_mod]:checked").val() == 2) {
+
         var interval = document.getElementById("interval").value;
         var number = document.getElementById("number").value;
         var start = document.getElementById("start").value;
@@ -29,9 +92,7 @@
           noise : noise,
           start : start,
           jobname: jobName
-
-
-        };
+       };
 
       } 
 
@@ -126,6 +187,7 @@
     $scope.singlePage3 = false;
     $scope.singlePage4 = false;
     $scope.singlePage5 = false;
+    $scope.singlePage6 = false;
     
 
     $scope.singlechangeView = function(val){
@@ -136,6 +198,7 @@
         $scope.singlePage3 = false;
         $scope.singlePage4 = false;
          $scope.singlePage5 = false;
+         $scope.singlePage6 = false;
 
         
       } else if (val == 'singleView1') {
@@ -146,6 +209,7 @@
         $scope.singlePage3 = false;
         $scope.singlePage4 = false;
          $scope.singlePage5 = false;
+         $scope.singlePage6 = false;
         
       } else if (val == 'singleView2') {
         $scope.firstPage = false;
@@ -154,7 +218,7 @@
         $scope.singlePage3 = false;
         $scope.singlePage4 = false;
          $scope.singlePage5 = false;
-        
+        $scope.singlePage6 = false;
         
       }
       else if (val == 'singleView3') {
@@ -164,7 +228,7 @@
         $scope.singlePage3 = true;
         $scope.singlePage4 = false;
          $scope.singlePage5 = false;
-        
+        $scope.singlePage6 = false;
         
       }
       else if (val == 'singleView4') {
@@ -174,7 +238,7 @@
         $scope.singlePage3 = false;
         $scope.singlePage4 = true;
         $scope.singlePage5 = false;
-        
+        $scope.singlePage6 = false;
         
       }
 
@@ -185,10 +249,21 @@
         $scope.singlePage3 = false;
         $scope.singlePage4 = false;
         $scope.singlePage5 = true;
-        
+        $scope.singlePage6 = false;
         
       }
 
+         else if (val == 'singleView6') {
+        $scope.firstPage = false;
+        $scope.singlePage1 = false;
+        $scope.singlePage2 = false;
+        $scope.singlePage3 = false;
+        $scope.singlePage4 = false;
+        $scope.singlePage5 = false;
+        $scope.singlePage6 = true;
+        
+        
+      }
 
       
     }

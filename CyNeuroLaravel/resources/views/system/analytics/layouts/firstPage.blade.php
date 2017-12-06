@@ -17,9 +17,20 @@
          </div>
       </div>
    </div>
+
+
+   <!-- <div class = "row" >
+      <div class="col-md-12">
+       <a style="color:black" href="{{ asset('CyNeuroSimpleWorkflowExample.zip') }}"><i class="glyphicons-circle-arrow-top"></i> &nbsp Pull data from previous jobs</a>
+   </div>
+   </div> -->
    
    <div class = "row" style="display: block" id="selection2">
       <div class="col-md-12">
+          <a style="color:blue" href="" ng-click="pull_jobs()" ><i class="fa fa-info"></i> &nbsp View your previous jobs</a>
+       </br>
+       </br>
+
          <h3>NEURON</h3>
          <p>A neuron is an electrically excitable cell that receives, processes, and transmits information through electrical and chemical signals. These signals between neurons occur via specialized connections called synapses. Neurons can connect to each other to form neural networks. Neurons are major components of the brain and spinal cord of the central nervous system, and of the autonomic ganglia of the peripheral nervous system.</p>
          </p>

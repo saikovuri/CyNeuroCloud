@@ -41,6 +41,7 @@
        
 
         <form name="singleNeuron" >
+          @include('system.analytics.layouts.singleView6')
         @include('system.analytics.layouts.singleView1')
         @include('system.analytics.layouts.singleView2')
         @include('system.analytics.layouts.singleView3')
@@ -172,6 +173,10 @@
    var php_upload_input_test = '{{ route('system.analytics.store_params') }}';
    var php_get_job_submit_url = '{{ route('system.analytics.api_workflow_job_submit') }}';
     
+   var php_workflow_get_job_list = '{{ route('system.analytics.workflow_get_job_list') }}';
+   var php_workflow_get_job_parameters = '{{ route('system.analytics.workflow_get_job_parameters') }}';
+   
+
      
 </script>
 <script src="{{ asset('jscss/dropzone/dropzone.js') }}" type="text/javascript" ></script>

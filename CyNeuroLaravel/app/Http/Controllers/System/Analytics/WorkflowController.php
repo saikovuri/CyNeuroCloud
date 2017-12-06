@@ -53,22 +53,27 @@ public function workflow_get_job_list(Request $request) {
 
         //return $jobs; //need to return view instead
         return json_encode($jobs);
+
 }
 
 public function workflow_get_job_parameters(Request $request) {
 
         $job_id = $request->job_id; 
+        
 
         $job_parameters = DB::table('job_parameter')
         ->join('parameter', 'job_parameter.parameter_id', 'parameter.id')
+        ->join('job', 'job_parameter.job_id', 'job.id')
+        ->join('step_option', 'job.step_option_id', 'step_option.id')
         ->where([
             ['job_parameter.job_id', '=', $job_id ],        
         ])
-        ->select('job_parameter.id', 'parameter.parameter_name', 'job_parameter.value_string')
-        ->get();     
+        ->select('job_parameter.id', 'parameter.parameter_name', 'job_parameter.value_string', 'job.job_name', 'step_option.step_option_name')
+        ->get();  
 
-        //return $job_parameters; //need to return view instead
         return json_encode($job_parameters);
+
+
  
 }
 
@@ -203,6 +208,7 @@ public function workflow_get_job_parameters(Request $request) {
         $v_init = '-60';
         $tstop = '100';
         $dt = '0.001';
+        $job_name = $request->jobname;
 
         if($request->id ==1)
         {
@@ -210,7 +216,7 @@ public function workflow_get_job_parameters(Request $request) {
         $delay = $request->delay;
         $duration = $request->duration;  
         $amplitude = $request->amplitude;  
-        $job_name = $request->jobname;
+      
 
 
         $myfile = fopen("SimpleCurrentInjection.cfg", "w") or die("Unable to open file!");
@@ -248,11 +254,6 @@ public function workflow_get_job_parameters(Request $request) {
                 $injection->duration=$duration;
                 $injection->amplitude=$amplitude;
                 $injection->save();
-
-    //         DB::table('current_injections')->insert(
-    //     array('delay' => $delay, 'duration' => $duration, 'amplitude' => $amplitude)
-    // );
-
 
         }
 
