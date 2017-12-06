@@ -48,10 +48,11 @@ public function workflow_get_job_list(Request $request) {
         ->where([
             ['user_id', '=', $user_id ],        
         ])
-        ->select('job.id', 'step_option_id', 'job_name', 'usecase_name', 'step_name', 'step_option_name', 'job.created_at')
+        ->select('job.id', 'job_name', 'usecase_name', 'step_name', 'step_option_name', 'job.created_at')
         ->get();     
 
-        return $jobs; //need to return view instead
+        //return $jobs; //need to return view instead
+        return json_encode($jobs);
 }
 
 public function workflow_get_job_parameters(Request $request) {
@@ -66,7 +67,8 @@ public function workflow_get_job_parameters(Request $request) {
         ->select('job_parameter.id', 'parameter.parameter_name', 'job_parameter.value_string')
         ->get();     
 
-        return $job_parameters; //need to return view instead
+        //return $job_parameters; //need to return view instead
+        return json_encode($job_parameters);
  
 }
 
