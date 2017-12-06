@@ -28,7 +28,7 @@
             <br>
             Job ID: <strong>@{{ jobID }}</strong>
             <br>
-            Plase remember this Job ID for monitoring the status.
+            Please remember this Job ID for monitoring the status.
          </p>
       </div>
 

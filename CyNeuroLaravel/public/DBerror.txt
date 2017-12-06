@@ -3,73 +3,10 @@ Array
 (
     [step_option_id] => 2
     [user_id] => 1
-    [job_name] => Test
-    [created_at] => 2017-12-05 21:08:37
-    [updated_at] => 2017-12-05 21:08:37
+    [job_name] => 
+    [created_at] => 2017-12-06 05:02:40
+    [updated_at] => 2017-12-06 05:02:40
 )
-Array
-(
-    [job_id] => 1
-    [file_id] => 1
-    [created_at] => 2017-12-05 21:08:37
-    [updated_at] => 2017-12-05 21:08:37
-)
-Array
-(
-    [0] => Array
-        (
-            [job_id] => 1
-            [parameter_id] => 1
-            [value_string] => 1
-            [created_at] => 2017-12-05 21:08:37
-            [updated_at] => 2017-12-05 21:08:37
-        )
-
-    [1] => Array
-        (
-            [job_id] => 1
-            [parameter_id] => 2
-            [value_string] => 10
-            [created_at] => 2017-12-05 21:08:37
-            [updated_at] => 2017-12-05 21:08:37
-        )
-
-    [2] => Array
-        (
-            [job_id] => 1
-            [parameter_id] => 3
-            [value_string] => 0.001
-            [created_at] => 2017-12-05 21:08:37
-            [updated_at] => 2017-12-05 21:08:37
-        )
-
-    [3] => Array
-        (
-            [job_id] => 1
-            [parameter_id] => 4
-            [value_string] => 50
-            [created_at] => 2017-12-05 21:08:37
-            [updated_at] => 2017-12-05 21:08:37
-        )
-
-    [4] => Array
-        (
-            [job_id] => 1
-            [parameter_id] => 5
-            [value_string] => 100
-            [created_at] => 2017-12-05 21:08:37
-            [updated_at] => 2017-12-05 21:08:37
-        )
-
-    [5] => Array
-        (
-            [job_id] => 1
-            [parameter_id] => 6
-            [value_string] => -60
-            [created_at] => 2017-12-05 21:08:37
-            [updated_at] => 2017-12-05 21:08:37
-        )
-
-)
-Testing_NORMAL_FLOW_CONTINUES
+Testing_CATCH
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'job_name' cannot be null (SQL: insert into `job` (`step_option_id`, `user_id`, `job_name`, `created_at`, `updated_at`) values (2, 1, , 2017-12-06 05:02:40, 2017-12-06 05:02:40))
 Testing_FINALLY
