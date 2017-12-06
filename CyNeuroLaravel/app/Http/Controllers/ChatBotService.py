@@ -1,7 +1,7 @@
 #!/Users/arjun_ac/anaconda3/bin/python
 
 import sys
-import json
+import ast
 from watson_developer_cloud import ConversationV1
 
 # Set up Conversation service.
@@ -14,15 +14,15 @@ workspace_id = '5a69f598-b189-46d7-a832-651ae67f2599' # replace with workspace I
 
 # Get user input and context form the command line arguments
 user_input = sys.argv[1]
-#user_input = "great tell me about templates"
+#user_input = "great tell me more about templates"
+
 # Get context from the user request
 context_argv = sys.argv[2]
-#context_argv = {'conversation_id': '7be68da8-f44f-4879-b126-dec343b3180a', 'system': {'dialog_stack': [{'dialog_node': 'root'}], 'dialog_turn_counter': 5, 'dialog_request_counter': 5, '_node_output_map': {'node_11_1510771220248': [0], 'node_8_1510727435692': [0], 'node_12_1510772068132': [0], 'node_2_1510726118075': [0]}, 'branch_exited': True, 'branch_exited_reason': 'completed'}}
+#context_argv = "{'conversation_id': '6575b379-cfd7-4652-8ec5-e59145d8fcea', 'system': {'dialog_stack': [{'dialog_node': 'root'}], 'dialog_turn_counter': 1, 'dialog_request_counter': 1, '_node_output_map': {'node_11_1510771220248': [0]}, 'branch_exited': True, 'branch_exited_reason': 'completed'}}"
 
-# Convert json string to json acceptable string
-json_acceptable_string = context_argv.replace("'", "\"")
-# Pass the json acceptable string and create a son object i.e dictionary object in python
-context_dict = json.loads(json_acceptable_string)
+# convert json string into dictionary object
+context_dict = ast.literal_eval(context_argv);
+#print(type(context_dict))
 
 # Send a user message to the bot and get the response
 response = conversation.message(

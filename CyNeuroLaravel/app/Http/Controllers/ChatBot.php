@@ -22,7 +22,6 @@ class ChatBot extends Controller
 				//echo $line;
 				//echo "<br>";
 			}
-			//$temp = $command;
 		} else {
 			$temp = "";
 			// Append all the lines to the temp variable
