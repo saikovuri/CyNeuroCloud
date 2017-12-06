@@ -253,11 +253,16 @@
                     success: function(result){
                         var viman_before = '<div class="chatbox__body__message chatbox__body__message--left"><img src="{{asset('images/viman_agent.png')}}" alt="VIMAN"><p>';
 
-                        var res = result.split("|");
+                        var res = result.split("~");
 
                         var viman_finalValue = viman_before + res[0] + after;
                         $('#chatbox_body_content').append(viman_finalValue);
-                        $('#conversation_id').val(res[1]);
+                        if (res[0].includes('error')) {
+                          $('#chat_context').val("{}");  
+                        } else {
+                          $('#chat_context').val(res[1]);  
+                        }
+                        
                     },
                     error: function(error){
                         $('#chatbox_body_content').append(error);
@@ -274,6 +279,14 @@
 })(jQuery); // end of first function
 </script>
 <!-- Jquery function for the bot ends here -->
+
+<script type="text/javascript">
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+</script>
 
 <!-- below is the separate js file which has the same above code for the chatbot but for some reason it is not workinng when i use the below file so, for now i have pasterall the js code above on this page -->
 <!-- <script src="{{ asset('jscss/custom/chatbot/chatbot.js') }}" type="text/javascript"></script> -->
