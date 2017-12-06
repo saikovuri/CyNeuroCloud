@@ -11,6 +11,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->insert( 
+            [
+            'name' => 'NeuroSai',
+            'email' => 'neurosai@isp.com',
+            'password' => 'letmein',
+            'remember_token' => 'letmein',
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s")
+            ]
+        );
     	DB::table('template')->insert(
     		[[
             'usecase_name' => 'FMRI',

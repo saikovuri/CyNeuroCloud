@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Controllers\Controller;
 use App\Current_injection;
+use App\Job;
 
 use Redirect;
 use ZipArchive;
@@ -35,7 +36,39 @@ class WorkflowController extends Controller
     }
 
 
+public function workflow_get_job_list(Request $request) {
 
+
+        $user_id = $request->user_id; 
+
+        $jobs = DB::table('job')
+        ->join('step_option', 'job.step_option_id', '=', 'step_option.id')
+        ->join('step', 'step_option.step_id', '=', 'step.id')
+        ->join('template', 'step.template_id', '=', 'template.id')
+        ->where([
+            ['user_id', '=', $user_id ],        
+        ])
+        ->select('job.id', 'step_option_id', 'job_name', 'usecase_name', 'step_name', 'step_option_name', 'job.created_at')
+        ->get();     
+
+        return $jobs; //need to return view instead
+}
+
+public function workflow_get_job_parameters(Request $request) {
+
+        $job_id = $request->job_id; 
+
+        $job_parameters = DB::table('job_parameter')
+        ->join('parameter', 'job_parameter.parameter_id', 'parameter.id')
+        ->where([
+            ['job_parameter.job_id', '=', $job_id ],        
+        ])
+        ->select('job_parameter.id', 'parameter.parameter_name', 'job_parameter.value_string')
+        ->get();     
+
+        return $job_parameters; //need to return view instead
+ 
+}
 
 
 
