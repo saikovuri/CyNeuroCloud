@@ -288,6 +288,8 @@ class WorkflowController extends Controller
             $step_option_name = 'synapse';
             $file_name = 'SimpleSynapse.cfg';
         }
+        
+        fwrite($myfile, 'Testing_afterFieldValues'. PHP_EOL);
 
         //get step option id
         $query_result = DB::table('template')
@@ -301,7 +303,12 @@ class WorkflowController extends Controller
         ->select('step_option.id')
         ->get();
 
+        fwrite($myfile, 'Testing_templateDBCall'. PHP_EOL);
+        fwrite($myfile, print_r($query_result, true));
+
         $step_option_id = $query_result[0]->id;
+
+        fwrite($myfile, 'Testing_stepOptionID_assignment'. PHP_EOL);
 
         //get file id
         $query_result = DB::table('file')
@@ -311,6 +318,8 @@ class WorkflowController extends Controller
         ])
         ->select('file.id')
         ->get();
+
+        fwrite($myfile, 'Testing_fileDBCall'. PHP_EOL);
 
         $file_id = $query_result[0]->id;
 
@@ -322,12 +331,14 @@ class WorkflowController extends Controller
         ->select('parameter.id', 'parameter_name')
         ->get();        
 
+        fwrite($myfile, 'Testing_parameterDBCall'. PHP_EOL);
+
         //begin transaction
         /*****************************************/
 
         DB::beginTransaction(); 
         fwrite($myfile, 'Testing_InsideTransaction'. PHP_EOL);
-        fwrite($myfile, 'job_id '.$job_id. PHP_EOL);
+        
 
         //Job first
         /*****************************************/
