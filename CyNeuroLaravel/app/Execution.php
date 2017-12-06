@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Job_file extends Model
+class Execution extends Model
 {
-	protected $table = 'job_file';
+    protected $table = 'execution';
 }
