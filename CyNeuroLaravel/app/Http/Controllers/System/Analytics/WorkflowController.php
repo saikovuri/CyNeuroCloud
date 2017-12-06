@@ -71,7 +71,23 @@ public function workflow_get_job_parameters(Request $request) {
         ->select('job_parameter.id', 'parameter.parameter_name', 'job_parameter.value_string', 'job.job_name', 'step_option.step_option_name')
         ->get();  
 
-        return json_encode($job_parameters);
+            $response = array();
+        array_push($response,
+                [ 'job_name' => 'test_job_name'
+                ]);
+        array_push($response,
+                [ 'step_option_name' => 'current injection'
+                ]);
+        foreach ($job_parameters as $param) {
+         $parameter_name = $param->parameter_name;
+         $parameter_value = $param->value_string;
+            //$$parameter_name is a variable variable for the variables created for the file write
+            array_push($response,
+                [ $parameter_name => $parameter_value
+                ]);
+
+       }
+        return json_encode($response);
 
 
  

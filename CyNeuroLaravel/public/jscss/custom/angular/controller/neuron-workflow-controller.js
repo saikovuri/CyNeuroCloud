@@ -32,7 +32,7 @@
 
      $scope.select_job_parameters = function(job_id) {
 
-            console.log(job_id);
+            
       var get_params = {
           job_id :job_id
         };
@@ -46,8 +46,8 @@
       }).then(function success(response, status, headers, config){
 
 
-             $scope.jobs = response.data;
-            console.log(response.data);
+             $scope.params = response.data;
+            console.log($scope.params.job_name);
             $scope.singlePage6 = false;
             $scope.singlePage1 = true;
         }, function error(response, status, headers, config){
@@ -309,6 +309,7 @@
         }).then(function success(response, status, headers, config){
 
             if(response.data != '') {
+              console.log(response.data);
               
                 $scope.submit_time = response.data.dateSubmitted
                 $scope.jobID = response.data.jobHandle
