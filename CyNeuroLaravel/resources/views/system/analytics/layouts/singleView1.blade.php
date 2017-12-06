@@ -1,9 +1,19 @@
 <div class="row" id="singlePage1" ng-show="singlePage1">
    <div class="container">
       <h3 style="margin-top: 25px" align="margin-left"> Single Neuron Workflow Requirements</h3>
-      <div class="row">
-        
-      </div>
+       <div class="form-group row col-md-12" style="margin-top: 15px">
+            <div class="col-md-2">
+            </div>
+            <label for="jobname" class="col-md-2 col-form-label">Job Name : </label>
+
+            <div class="col-md-5">
+               <input type="text" class="form-control" id="jobName" name="jobName" value = "" />
+            </div>
+            <div class="tooltip col-md-2" style="color: black">
+               <span class="glyphicon glyphicon-question-sign"></span>
+               <span class="tooltiptext">Job Name</span>
+            </div>
+         </div>
       </br></br>
       <div class="col-md-12">
       <div style="background:transparent !important ; display: block" class=" jumbotron"  >
