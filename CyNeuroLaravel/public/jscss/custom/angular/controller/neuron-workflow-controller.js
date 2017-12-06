@@ -1,10 +1,5 @@
   system_app.controller('neuron-workflow-show', function($scope, $http, $window) {
 
-
-
-
-
-
     $scope.run_func = function() {
 
           var jobName = document.getElementById("jobName").value;
@@ -48,9 +43,6 @@
 
       }).then(function success(response, status, headers, config){
 
-           //$scope.tool = response.data.val;
-           //console.log(response.data);
-           // $window.location.href = "http://" + $window.location.host + "/system/analytics/databworkflow_pageases_page";
             $scope.singlePage4 = false;
             $scope.singlePage5 = true;
 
@@ -222,11 +214,6 @@
     $scope.func_run = function() {
 
         file_list_str = input_file_list.join();
-        // if( file_list_str == "" || $scope.selected_tool === undefined || !$scope.selected_tool) {
-        //     $scope.show_alert = true;
-        // }
-        // else
-        //     $scope.show_alert = false;
 
         
         var get_run_workflow_params = {
@@ -248,7 +235,6 @@
 
             if(response.data != '') {
               
-                console.log(response.data);
                 $scope.submit_time = response.data.dateSubmitted
                 $scope.jobID = response.data.jobHandle
                 $scope.show_run = true;
