@@ -45,9 +45,27 @@
 
       }).then(function success(response, status, headers, config){
 
+            //console.log(response.data);
+            $scope.params = response.data;
+            $scope.job_name = $scope.params[0].job_name;
 
-             $scope.params = response.data;
-            console.log($scope.params.job_name);
+            $scope.step_option_name = $scope.params[1].step_option_name;
+            console.log($scope.step_option_name);
+            if($scope.step_option_name==="current injection")
+            {  
+              console.log("Hello")
+            $scope.amplitude = $scope.params[2].amplitude;
+            $scope.delay = $scope.params[3].delay;
+            $scope.duration = $scope.params[5].duration;
+            }
+
+            else if($scope.step_option_name==="synapse") 
+            {
+            $scope.interval = $scope.params[3].interval;
+            $scope.noise = $scope.params[4].noise;
+            $scope.number = $scope.params[5].number;
+            $scope.start = $scope.params[6].start;
+            }
             $scope.singlePage6 = false;
             $scope.singlePage1 = true;
         }, function error(response, status, headers, config){
@@ -309,9 +327,7 @@
         }).then(function success(response, status, headers, config){
 
             if(response.data != '') {
-              console.log(response.data);
-              
-                $scope.submit_time = response.data.dateSubmitted
+              $scope.submit_time = response.data.dateSubmitted
                 $scope.jobID = response.data.jobHandle
                 $scope.show_run = true;
 

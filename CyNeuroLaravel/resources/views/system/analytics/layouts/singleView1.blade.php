@@ -7,7 +7,7 @@
             <label for="jobname" class="col-md-2 col-form-label">Job Name : </label>
 
             <div class="col-md-5">
-               <input type="text" class="form-control" id="jobName" name="jobName" value = "" />
+               <input type="text" class="form-control" id="jobName" name="jobName" value = "@{{job_name}}" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>

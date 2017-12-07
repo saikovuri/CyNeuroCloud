@@ -73,10 +73,10 @@ public function workflow_get_job_parameters(Request $request) {
 
             $response = array();
         array_push($response,
-                [ 'job_name' => 'test_job_name'
+                [ 'job_name' => $job_parameters[0]->job_name
                 ]);
         array_push($response,
-                [ 'step_option_name' => 'current injection'
+                [ 'step_option_name' => $job_parameters[0]->step_option_name
                 ]);
         foreach ($job_parameters as $param) {
          $parameter_name = $param->parameter_name;

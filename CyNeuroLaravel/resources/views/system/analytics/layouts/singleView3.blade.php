@@ -16,8 +16,8 @@
          <div class="form-group row col-md-12">
             <div class="col-md-4">
             </div>
-            <div class="col-md-6">
-               <label><input id="inj_mod" checked type="radio" name="inj_mod" value = '1'>   Current injection model</label>
+            <div class="col-md-6" >
+               <label><input id="inj_mod"  type="radio" name="inj_mod" value = '1'>   Current injection model</label>
             </div>
             <div class="col-md-2">
             </div>
@@ -31,13 +31,13 @@
            
          </div>
 
-         <div style="display: block;" id="curr_inj">
+         <div style="display: none;" id="curr_inj">
           <div class="form-group row col-md-12">
             <div class="col-md-2">
             </div>
             <label for="jobname" class="col-md-2 col-form-label">a. Delay:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="delay" name="delay" value = "10" />
+               <input type="text" class="form-control" id="delay" name="delay" value = "@{{delay}}" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -49,7 +49,7 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">b. Duration:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="duration" name="duration" value = "50" />
+               <input type="text" class="form-control" id="duration" name="duration" value = "@{{duration}}" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -61,7 +61,7 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">c. Amplitude:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="amplitude" name="amplitude" value = "1" />
+               <input type="text" class="form-control" id="amplitude" name="amplitude" value = "@{{amplitude}}" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -76,7 +76,7 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">a. Interval:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="interval" name="interval" value = "10"/>
+               <input type="text" class="form-control" id="interval" name="interval" value = "@{{interval}}"/>
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -88,7 +88,7 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">b. Number:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="number" name="number" value ="5"/>
+               <input type="text" class="form-control" id="number" name="number" value ="@{{number}}"/>
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -100,7 +100,7 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">c. Start:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="start" name="start" value = "10" />
+               <input type="text" class="form-control" id="start" name="start" value = "@{{start}}" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
@@ -113,7 +113,7 @@
             </div>
             <label for="jobname" class="col-md-2 col-form-label">d. Noise:</label>
             <div class="col-md-5">
-               <input type="text" class="form-control" id="noise" name="noise" value = "0" />
+               <input type="text" class="form-control" id="noise" name="noise" value = "@{{noise}}" />
             </div>
             <div class="tooltip col-md-2" style="color: black">
                <span class="glyphicon glyphicon-question-sign"></span>
