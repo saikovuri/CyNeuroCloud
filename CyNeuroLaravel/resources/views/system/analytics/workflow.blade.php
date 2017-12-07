@@ -12,7 +12,7 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs nav-justified indigo" role="tablist">
    <li class="nav-item">
-      <a class="nav-link active" data-toggle="tab" href="#panel5" role="tab"><i class="fa fa-user"></i> Introduction</a>
+      <a class="nav-link active" data-toggle="tab" href="#panel5" role="tab"><i class="fa fa-user"></i> Customize Workflow</a>
    </li>
    <li class="nav-item">
       <a class="nav-link" data-toggle="tab" href="#panel6" role="tab"><i class="fa fa-heart"></i> Create Workflow</a>
