@@ -28,8 +28,8 @@
            <td>@{{row.step_name}}</td>
            <td>@{{row.step_option_name}}</td>
            <td>@{{row.created_at}}</td>
-           <td> <input type="Submit" ng-click="select_job_parameters(1)" class="btn btn-primary" value="Select" > </td>
-            
+           <!-- <td> <input type="Submit" ng-click="select_job_parameters(1)" class="btn btn-primary" value="Select" > </td> -->
+          <td> <input type="Submit" ng-click="select_job_parameters(row.id)" class="btn btn-primary" value="Select" > </td>            
     </table>
  
 
