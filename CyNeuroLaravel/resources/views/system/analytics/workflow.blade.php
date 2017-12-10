@@ -255,6 +255,11 @@
 
                         var res = result.split("~");
 
+                        if (res[0] === 'VIMAN : ActionAction') {
+                          $("#arjun_button").click();
+                          res[0] = 'Great lets get started with the requirements';
+                        }
+
                         var viman_finalValue = viman_before + res[0] + after;
                         $('#chatbox_body_content').append(viman_finalValue);
                         if (res[0].includes('error')) {

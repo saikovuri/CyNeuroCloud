@@ -52,7 +52,7 @@
          </br>
          </br>
          <div ng-hide="content == 'second'" class="form-actions"  id="singlebutton" >
-            <input type="Submit" class="btn btn-primary pull-right" ng-click="singlechangeView('singleView1')" value="Next" > 
+            <input type="Submit" class="btn btn-primary pull-right" id="arjun_button" ng-click="singlechangeView('singleView1')" value="Next" > 
          </div>
          </br>
       </div>
