@@ -14,9 +14,19 @@
                <span class="tooltiptext">Job Name</span>
             </div>
          </div>
+       <div class="form-group row col-md-12" style="margin-top: 15px">
+      <div class = "col-md-12 "  >
+         <div class="col-md-2"></div>
+         <div class="col-md-4">
+            <label><input id="first" type="radio" name="geometry_type_radio" value="1" checked="checked">   Simple Neuron Cell</label>
+         </div>
+         <div class="col-md-4">
+            <label><input id="second" type="radio" name="geometry_type_radio" value="2"> Complex Neuron Cell</label>
+         </div>
+      </div>
       </br></br>
-      <div class="col-md-12">
-      <div style="background:transparent !important ; display: block" class=" jumbotron"  >
+      <div class="col-md-12" id="simple_neuron" style="display: block">
+      <div class=" jumbotron">
          <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-3">
@@ -32,6 +42,25 @@
                <input style="margin-left: 130px" id="geometry"  type="radio" name="geometry" value = '3' > 
             </div>
             
+         </div>
+        
+        
+      </div>
+      </div>
+
+      <div class="col-md-12" id="complex_neuron" style="display: none">
+      <div class=" jumbotron">
+         <div class="row">
+            <div class="col-md-1"></div>
+            <div class="form-group row col-md-12">
+               <div class="col-md-4">
+               </div>
+               <div class="col-md-4">
+                  <input type="file" name="Neuron Cell" id="">
+               </div>
+               <div class="col-md-4">
+               </div>
+            </div>
          </div>
         
         

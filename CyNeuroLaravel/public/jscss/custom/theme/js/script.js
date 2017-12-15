@@ -28,6 +28,28 @@
 	    });
 	});
 
+$(document).ready(function() {
+
+        $('input:radio[name=geometry_type_radio]').click(function() {
+            if ($(this).val() == 1) {
+                document.getElementById("simple_neuron").style.display = "block";
+            } else {
+                document.getElementById("complex_neuron").style.display = "none";
+            }
+
+            if ($(this).val() == 2) {
+
+                document.getElementById("complex_neuron").style.display = "block";
+                 
+            } else {
+                document.getElementById("simple_neuron").style.display = "none";
+                 
+            }
+
+          
+
+        });
+    });
 
 
 $(document).ready(function() {
