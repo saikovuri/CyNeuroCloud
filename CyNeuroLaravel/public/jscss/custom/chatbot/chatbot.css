@@ -3,7 +3,7 @@
     bottom: 0;
     right: 0;
     width: 300px;
-    height: 400px;
+    height: 600px;
     background-color: #fff;
     font-family: 'Lato', sans-serif;
 
@@ -23,7 +23,7 @@
 }
 
 .chatbox--closed {
-    bottom: -400px;
+    bottom: -600px;
 }
 
 .chatbox .form-control:focus {

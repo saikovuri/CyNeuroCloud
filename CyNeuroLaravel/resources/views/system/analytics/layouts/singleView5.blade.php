@@ -26,7 +26,7 @@
             <br>
             Submit time: @{{ submit_time }}.
             <br>
-            Job ID: <strong>@{{ jobID }}</strong>
+            Job ID: <strong>NGBW-JOB-OSBPYNEURON74-7789A6FB98D14396BCAEBAC9C58C4B30</strong>
             <br>
             Plase remember this Job ID for monitoring the status.
          </p>

@@ -1,6 +1,6 @@
 <div class="chatbox chatbox--tray chatbox--empty">
     <div class="chatbox__title">
-        <h5><a href="#">CyNeuro Agent</a></h5>
+        <h5><a href="#">Expert Agent</a></h5>
         <!-- minimize button -->
         <button class="chatbox__title__tray">
             <span></span>
