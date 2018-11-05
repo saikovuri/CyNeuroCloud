@@ -217,7 +217,7 @@
         $chatboxTitleClose.on('click', function(e) {
             //e.stopPropagation();
             //$chatbox.addClass('chatbox--closed');
-            $('#chatbox_body_content').html("<div class=\"chatbox__body__message chatbox__body__message--left\"><img src=\"{{asset('images/viman_agent.png')}}\" alt=\"VIMAN\"><p>Hello, Welcome to CyNeuro portal, I am VIMAN your virtual agent.How can I help you?</p></div>");
+            $('#chatbox_body_content').html("<div class=\"chatbox__body__message chatbox__body__message--left\"><img src=\"{{asset('images/Vidura.jpg')}}\" alt=\"VIDURA\"><p>VIDURA: Hello, Welcome to CyNeuro portal, I am VIDURA your virtual agent.How can I help you?</p></div>");
         });
         $chatbox.on('transitionend', function() {
             if ($chatbox.hasClass('chatbox--closed')) $chatbox.remove();
@@ -251,13 +251,22 @@
                     data: {user_input: user_input, context: context_json},
                     async: false, 
                     success: function(result){
-                        var viman_before = '<div class="chatbox__body__message chatbox__body__message--left"><img src="{{asset('images/viman_agent.png')}}" alt="VIMAN"><p>';
+                        var viman_before = '<div class="chatbox__body__message chatbox__body__message--left"><img src="{{asset('images/Vidura.jpg')}}" alt="VIMAN"><p>';
 
                         var res = result.split("~");
 
-                        if (res[0] === 'VIMAN : ActionAction') {
-                          $("#arjun_button").click();
-                          res[0] = 'Great lets get started with the requirements';
+                        if (res[0] === 'VIDURA : ActionAction_Step01') {
+                          $("#step01_next_button").click();
+                          res[0] = 'VIDURA: Great lets get started with the requirements</br>In this step you will define geometric properties of a NEURON cell.</br>Please select one of the 3 geometries and specify the length and diameter of the dendri and soma.</br>The unit of length is in micro meters (um). Some sample values can be any number in the range 10 to 500.';
+                        } else if (res[0] === 'VIDURA : ActionAction_Step02') {
+                          $("#step02_next_button").click();
+                          res[0] = 'VIDURA: In this step you choose the ION channels of the NEURON cell. Please check at-least one of the three given ION chaneels.'
+                        } else if (res[0] === 'VIDURA : ActionAction_Step03') {
+                          $("#step03_next_button").click();
+                          res[0] = 'VIDURA: In this step you will choose simulation method and specify its parameters.'
+                        } else if (res[0] === 'VIDURA : ActionAction_Step04') {
+                          $("#step04_next_button").click();
+                          res[0] = 'VIDURA: This is the last step where you choose a graph type to plot the resutls of your simulation.'
                         }
 
                         var viman_finalValue = viman_before + res[0] + after;

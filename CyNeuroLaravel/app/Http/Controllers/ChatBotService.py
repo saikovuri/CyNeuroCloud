@@ -35,7 +35,7 @@ response = conversation.message(
 
 # Print the output from dialog, if any.
 if response['output']['text']:
-	print("VIMAN : " + response['output']['text'][0])
+	print("VIDURA : " + response['output']['text'][0])
 
 # Output the latest context 
 print(response['context'])

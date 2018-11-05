@@ -128,7 +128,7 @@
          <br></br>
          <input type="Submit" ng-click="singlechangeView('singleView2')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp
          <!-- <input type="Submit"  class="btn btn-primary pull-right" value="Next" > -->
-         <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-right" value="Next" >
+         <input type="Submit" ng-click="singlechangeView('singleView4')" class="btn btn-primary pull-right" value="Next" id="step04_next_button">
        </div>
     </div>
 </div>

@@ -12,7 +12,7 @@
             </div>
             <div class="col-md-4">
                <input type="image" name="image1" src="{{ asset('jscss/custom/theme/img/CyNeuroUI/wgcna.jpg') }}" alt="WGCNA" value = '3' width="300" height="200">
-               <p style="font-weight: bold !important" class = "text-center"> WGCNA </p>
+               <p style="font-weight: bold !important" class = "text-center"> Zebra Fish </p>
             </div>
          </div>
       </div>
@@ -52,7 +52,7 @@
          </br>
          </br>
          <div ng-hide="content == 'second'" class="form-actions"  id="singlebutton" >
-            <input type="Submit" class="btn btn-primary pull-right" id="arjun_button" ng-click="singlechangeView('singleView1')" value="Next" > 
+            <input type="Submit" class="btn btn-primary pull-right" id="step01_next_button" ng-click="singlechangeView('singleView1')" value="Next" > 
          </div>
          </br>
       </div>
@@ -92,7 +92,7 @@
 </br>
    <div class = "row" style="display: none" id="selection3">
       <div class="col-md-12">
-         <h3>WGCNA </h3>
+         <h3>Zebra Fish </h3>
          <p>Weighted correlation network analysis, also known as weighted gene co-expression network analysis (WGCNA), is a widely used data mining method especially for studying biological networks based on pairwise correlations between variables. While it can be applied to most high-dimensional data sets, it has been most widely used in genomic applications. It allows one to define modules (clusters), intramodular hubs, and network nodes with regard to module membership, to study the relationships between co-expression modules, and to compare the network topology of different networks.</p>
       </div>
    </div>

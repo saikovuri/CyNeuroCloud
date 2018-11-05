@@ -11,7 +11,7 @@ $(document).ready(function() {
     $chatboxTitleClose.on('click', function(e) {
             //e.stopPropagation();
             //$chatbox.addClass('chatbox--closed');
-            $('#chatbox_body_content').html("<div class=\"chatbox__body__message chatbox__body__message--left\"><img src=\"{{asset('images/viman_agent.png')}}\" alt=\"VIMAN\"><p>Hello, Welcome to CyNeuro portal, I am VIMAN your virtual agent.How can I help you?</p></div>");
+            $('#chatbox_body_content').html("<div class=\"chatbox__body__message chatbox__body__message--left\"><img src=\"{{asset('images/Vidura.jpg')}}\" alt=\"VIDURA\"><p>Hello, Welcome to CyNeuro portal, I am VIDURA your virtual agent.How can I help you?</p></div>");
         });
     $chatbox.on('transitionend', function() {
         if ($chatbox.hasClass('chatbox--closed')) $chatbox.remove();
@@ -45,7 +45,7 @@ $(document).ready(function() {
                     data: {user_input: user_input, context: context_json},
                     async: false, 
                     success: function(result){
-                        var viman_before = '<div class="chatbox__body__message chatbox__body__message--left"><img src="{{asset('images/viman_agent.png')}}" alt="VIMAN"><p>';
+                        var viman_before = '<div class="chatbox__body__message chatbox__body__message--left"><img src="{{asset('images/Vidura.jpg')}}" alt="VIDURA"><p>';
 
                         var res = result.split("|");
 

@@ -1,6 +1,6 @@
 <div class="chatbox chatbox--tray chatbox--empty">
     <div class="chatbox__title">
-        <h5><a href="#">Expert Agent</a></h5>
+        <h5><a href="#">VIDURA Advisor</a></h5>
         <!-- minimize button -->
         <button class="chatbox__title__tray">
             <span></span>
@@ -19,8 +19,8 @@
     </div>
     <div class="chatbox__body" id="chatbox_body_content">
         <div class="chatbox__body__message chatbox__body__message--left">
-            <img src="{{asset('images/viman_agent.png')}}" alt="VIMAN">
-            <p>Hello, Welcome to CyNeuro portal, I am VIMAN your virtual agent.How can I help you?</p>
+            <img src="{{asset('images/Vidura.jpg')}}" alt="VIMAN">
+            <p>Hello, Welcome to CyNeuro portal, I am VIDURA your virtual agent.How can I help you?</p>
         </div>
         <!-- <div class="chatbox__body__message chatbox__body__message--right">
             <img src="{{asset('images/user_icon.png')}}" alt="User">
@@ -39,5 +39,5 @@
         <button type="submit" class="btn btn-success btn-block">Enter Chat</button>
     </form>
     <input type="hidden" id="chat_context" name="conversation_id" value="{}">
-    <input type="text" id="user_input" name="user_input" class="chatbox__message" placeholder="Write something interesting"></input>
+    <input type="text" id="user_input" name="user_input" class="chatbox__message" placeholder="Write here"></input>
 </div>

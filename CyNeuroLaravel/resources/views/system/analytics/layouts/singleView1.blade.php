@@ -196,7 +196,7 @@
      
       <div class="form-actions" style="display: block; margin-top: 135px;" id="button3">
             <input type="Submit" ng-click="singlechangeView('firstPage')" class="btn btn-primary pull-left" value="Back" >&nbsp  &nbsp
-            <input type="Submit" ng-click="singlechangeView('singleView2')" class="btn btn-primary pull-right" value="Next" >
+            <input type="Submit" ng-click="singlechangeView('singleView2')" id="step02_next_button" class="btn btn-primary pull-right" value="Next" >
       </div>
    </div>
 
